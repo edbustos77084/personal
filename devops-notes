@@ -1,26 +1,26 @@
-SAFe DevOps Health Radar
+#SAFe DevOps Health Radar
 
-Continuous Exploration: Why? Alignment How? Continuous Exploration
-Hypothesize
-Collaborate & Research 
-Architect
-Synthesize
-Continuous Integration - Why? Quality, How? Continuous Integration
-Develop
-Build
-Test End-to-End
-Stage
-Continuous Deployment  - Why? Time to Market - How? Continuous Deployment, 
-Deploy
-Verify
-Monitor
-Respond
-Release on Demand - Why? Business Value, How? Release on Demand
-Release
-Stabilize
-Measure
-Learn
-Repeat>.....
+##Continuous Exploration: Why? Alignment How? Continuous Exploration
+- Hypothesize
+- Collaborate & Research 
+- Architect
+- Synthesize
+##Continuous Integration - Why? Quality, How? Continuous Integration
+- Develop
+- Build
+- Test End-to-End
+- Stage
+##Continuous Deployment  - Why? Time to Market - How? Continuous Deployment, 
+- Deploy
+- Verify
+- Monitor
+- Respond
+##Release on Demand - Why? Business Value, How? Release on Demand
+- Release
+- Stabilize
+- Measure
+- Learn
+##Repeat.....
 
 Lesson 1- Introducing DevOps
 1.1. Recognize the problem to be solved. 
