@@ -440,3 +440,10 @@ Lesson 4 - Building Quality with Continuous Integration
 
 - Calculate WSJ
 * Cost of Delay / Job Size = WSJF
+
+#### Take Action
+* Share the DevOps transformation canvas and insights with your peers
+* Refine the Value Stream Map with your stakeholders
+* Enter your top three improvements into your Program Backlog
+* Enhance your software engineering practices with Agile Software Engineering
+* Explore the Architect role with SAFe for Architects
