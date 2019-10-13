@@ -405,36 +405,38 @@ Lesson 4 - Building Quality with Continuous Integration
 - 6.2 Stabilize the solution
 * Purpose: Ensure sustainability of high levels of business continuity, application service levels, and data protection
 * Site Reliability Engineering (SRE)
-Ensure large systems are highly reliable and scalable 
-Shared ownership of system stability between Dev and OPs
-T-Shaped engineers with deep development and operations expertise
-Approaching all operational activities as a software concern
-Closely managing Service Level Indicators (SLIs) and Service Level Objectives (SLOs)
-Failover/Disaster Recovery
-Develop the ability to recover quickly
-Failover mechanism allows service to resume quickly, or even avoid service interruption
-Disaster recovery must be planned, architected into the service and practices 
-Continuous security monitoring
-Detect intrusions and attacks on production services and infrastructure (detective controls)
-Security as code and penetration testing focus on preventing known vulnerabilities from getting to production (preventive controls)
-Test services continuously for newly discovered and reported vulnerabilities
-Architect for operations (covered in Architect)
-Nonfunctional requirements (covered in Test End-to-End)
-6.3 Measure the business value
-Purpose: Test hypotheses of business value and customers are delighted with delivered solution before Operations takes custody
-Innovation accounting (covered in Hypothesize)
-Evaluate hypothesis
-Application telemetry creates a way to evaluate the business results of a hypothesis
-Measure both leading and lagging indicators
-Build the ability to identify the correlation between business results and the hypothesis being tested
-6.4 Learn and React
-Purpose: Learn from the hypothesis on whether to pivot or persevere, as well as how to improve the flow of value
-Learn Startup (covered in Hypothesize)
-Relentless Improvement
-In order to improve the ability to test hypotheses, the Continuous Delivery Pipeline must be constantly maintained
-Team-level retrospectives and program and solution-level Inspect and Adapt events are crucial to improve the flow
-Focus on the root cause of bottlenecks and research incidents to identify the most important place to improve
-Value Stream Mapping
-Continuously apply Value Stream mapping to optimize value flow
-Apply current state mapping and future state mapping so objectives are clear
+  * Ensure large systems are highly reliable and scalable 
+  * Shared ownership of system stability between Dev and OPs
+  * T-Shaped engineers with deep development and operations expertise
+  * Approaching all operational activities as a software concern
+  * Closely managing Service Level Indicators (SLIs) and Service Level Objectives (SLOs)
+* Failover/Disaster Recovery
+  * Develop the ability to recover quickly
+  * Failover mechanism allows service to resume quickly, or even avoid service interruption
+  * Disaster recovery must be planned, architected into the service and practices 
+* Continuous security monitoring
+  * Detect intrusions and attacks on production services and infrastructure (detective controls)
+  * Security as code and penetration testing focus on preventing known vulnerabilities from getting to production (preventive controls)
+  * Test services continuously for newly discovered and reported vulnerabilities
+* Architect for operations (covered in Architect)
+* Nonfunctional requirements (covered in Test End-to-End)
+- 6.3 Measure the business value
+* Purpose: Test hypotheses of business value and customers are delighted with delivered solution before Operations takes custody
+* Innovation accounting (covered in Hypothesize)
+* Evaluate hypothesis
+  * Application telemetry creates a way to evaluate the business results of a hypothesis
+  * Measure both leading and lagging indicators
+  * Build the ability to identify the correlation between business results and the hypothesis being tested
+- 6.4 Learn and React
+* Purpose: Learn from the hypothesis on whether to pivot or persevere, as well as how to improve the flow of value
+* Learn Startup (covered in Hypothesize)
+* Relentless Improvement
+  * In order to improve the ability to test hypotheses, the Continuous Delivery Pipeline must be constantly maintained
+  * Team-level retrospectives and program and solution-level Inspect and Adapt events are crucial to improve the flow
+  * Focus on the root cause of bottlenecks and research incidents to identify the most important place to improve
+* Value Stream Mapping
+  * Continuously apply Value Stream mapping to optimize value flow
+  * Apply current state mapping and future state mapping so objectives are clear
 
+- Calculate WSJ
+* Cost of Delay / Job Size = WSJF
