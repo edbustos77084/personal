@@ -1,26 +1,30 @@
 # SAFe DevOps Health Radar
 
-### Continuous Exploration: Why? Alignment How? Continuous Exploration
+### Continuous Exploration: 
+#### Why? Alignment; How? Continuous Exploration
 - Hypothesize
 - Collaborate & Research 
 - Architect
 - Synthesize
-### Continuous Integration - Why? Quality, How? Continuous Integration
+### Continuous Integration:
+#### Why? Quality; How? Continuous Integration
 - Develop
 - Build
 - Test End-to-End
 - Stage
-### Continuous Deployment  - Why? Time to Market - How? Continuous Deployment, 
+### Continuous Deployment:
+#### Why? Time to Market; How? Continuous Deployment 
 - Deploy
 - Verify
 - Monitor
 - Respond
-### Release on Demand - Why? Business Value, How? Release on Demand
+### Release on Demand:
+#### Why? Business Value; How? Release on Demand
 - Release
 - Stabilize
 - Measure
 - Learn
-### Repeat.....
+#### Repeat.....every Sprint
 
 Lesson 1- Introducing DevOps
 - 1.1. Recognize the problem to be solved. 
@@ -76,35 +80,36 @@ Lesson 1- Introducing DevOps
     * Build the environment for both roll-back and fix-forward
 
 Lesson 2 - Mapping your Pipeline
-2.1 - Explain the purpose of mapping the Value Stream
-  Visualize the current state of the delivery pipeline using Key Metrics
-  Understand how work flows through the organization from concept to cash
-  Measure process quality and organizational efficiency 
-  Identify bottlenecks to the flow of value
-  Understand how we can improve the flow of value
-  Know how to draw the DevOps Transformation Canvas
+- 2.1 - Explain the purpose of mapping the Value Stream
+- 2.2 - Visualize the current state of the delivery pipeline using Key Metrics
+ * Why map the Value Stream?
+   * Understand how work flows through the organization from concept to cash
+   * Measure process quality and organizational efficiency 
+   * Identify bottlenecks to the flow of value
+   * Understand how we can improve the flow of value
+ * Know how to draw the DevOps Transformation Canvas
 
-Value Stream 
--> Trigger 
--> First Step 
--> Last Step 
--> Demand Rate 
--> Current State Map 
--> Future State map 
--> Boundaries and Limitations 
--> Improvement Items
+#### Value Stream 
+- [ ] Trigger 
+- [ ] First Step 
+- [ ] Last Step 
+- [ ] Demand Rate 
+- [ ] Current State Map 
+- [ ] Future State map 
+- [ ] Boundaries and Limitations 
+- [ ] Improvement Items
 
 https://vimeo.com/325445925/59913369d4
 
-2.2 - Visualize the current state of the delivery pipeline using key metrics
-  Identify the steps and people (current pipeline)
-  Value stream measurements
-  PT - Process Time (Actual value-added work)
-  LT - Lead Time - (Time from when work was ready after the previous station to completion)
-  Percent Complete and Accurate (%C&A) - Percent of work that the next station could process as-is
-  Measure the steps  (PT 4hrs/ LT 4 hrs)
-  Activity Ratio = PT/LT
-  Rolled %C&A = %C&A 1 * %C&A 2 * %C&An….* 100
+- 2.2 - Visualize the current state of the delivery pipeline using key metrics
+* Identify the steps and people (current pipeline)
+* Value stream measurements
+ * PT - Process Time (Actual value-added work)
+ * LT - Lead Time - (Time from when work was ready after the previous station to completion)
+ * Percent Complete and Accurate (%C&A) - Percent of work that the next station could process as-is (can only be calculated by talking to the downstream partner)
+   * Measure the steps  (PT 4hrs/ LT 4 hrs)
+   * Activity Ratio = PT/LT
+   * Rolled %C&A = %C&A 1 * %C&A 2 * %C&An….* 100
 
 Lesson 3 - Gaining Alignment with Continuous Exploration
   Create solution hypotheses
