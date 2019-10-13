@@ -197,7 +197,7 @@ Lesson 4 - Building Quality with Continuous Integration
 * Build Continuously
 * Test end-to-end
 * Validate on a staging environment
--4.1 Develop the solution - Implement a Story or a part of a Story and commit the code
+- 4.1 Develop the solution - Implement a Story or a part of a Story and commit the code
   * Break features into stories
     * Techniques for splitting Features and Stories to fit within their boundaries (PI and Iteration, Respectively)
       * Workflow steps
@@ -304,106 +304,107 @@ Lesson 4 - Building Quality with Continuous Integration
    * New Features work together, and with existing functionality
    * Demo from a Staging Environment that resembles production as much as possible
    * Program stakeholders provide feedback
+
 - Lesson 5 - Reducing Time-to Market with Continuous Deployment
 * 5.1 Deploy to Production
-Purpose changes into production with high frequency and low risk
-Dark Launches
-Separate deploy (to production) from release (to end users)
-Enables testing and monitoring system behavior in the actual production environment before exposing new functionality to users
-Feature Toggles
-Dynamically show and hide features in production
-Enables separation of deploy and release
-Enables rapid rollback of problem features
-Test toggles in both on and off position
-Be careful of toggle overload and testing complexity
-Infrastructure as Code
-Automates environment setup and teardown
-Manages all infrastructure assets and configurations in version control
-Accelerates and de-risks deployment by provisioning standard/gold environments on demand
-Enables infrastructure to always be in a deployable state (just like application code)
+* Purpose changes into production with high frequency and low risk
+* Dark Launches
+   * Separate deploy (to production) from release (to end users)
+   * Enables testing and monitoring system behavior in the actual production environment before exposing new functionality to users
+* Feature Toggles
+   * Dynamically show and hide features in production
+   * Enables separation of deploy and release
+   * Enables rapid rollback of problem features
+   * Test toggles in both on and off position
+   * Be careful of toggle overload and testing complexity
+* Infrastructure as Code
+  * Automates environment setup and teardown
+  * Manages all infrastructure assets and configurations in version control
+  * Accelerates and de-risks deployment by provisioning standard/gold environments on demand
+  * Enables infrastructure to always be in a deployable state (just like application code)
+* Deployment automation
+  * Automate all steps from code commit to production deployment
+  * Store all environment and package information in version control
+  * Test the deployment process itself
+* Selective Deployment
+  * Deploy to select production targets or environments
+  * This can be differentiated by data center, geography, customer
+  * Enables more flexible and sophisticated release strategies
+* Self-Service Deployment
+  * If complete automation from code commit to deployment to production is not possible, automate the deployment of the package to production
+  * Enable anyone to safely deploy validated packages
+  * Provide simple controls to facilitate what gets deployed
+* Version control (covered in Build)
+* Blue/Green deployment (covered in Stage)
 
-Deployment automation
-Automate all steps from code commit to production deployment
-Store all environment and package information in version control
-Test the deployment process itself
-Selective Deployment
-Deploy to select production targets or environments
-This can be differentiated by data center, geography, customer
-Enables more flexible and sophisticated release strategies
-Self-Service Deployment
-If complete automation from code commit to deployment to production is not possible, automate the deployment of the package to production
-Enable anyone to safely deploy validated packages
-Provide simple controls to facilitate what gets deployed
-Version control (covered in Build)
-Blue/Green deployment (covered in Stage)
-5.2 - Verify the Solution
-Purpose: Assure that deployment solutions behave as expected in production before they are released to end users.
-Production Testing
-Testing of features in the live environment
-This includes functional and nonfunctional testing
-Running synthetic transactions through the services to verify fitness for purpose (utility) and fitness for use (warranty)
-Test Automation (covered in Build)
-Test data management (covered in Test end-to-end)
-Nonfunctional Requirements (covered in Test end-to-end)
-5.3 - Monitor for Problems
-Purpose: Quantitatively measure system and user behavior in real time
-Full-stack telemetry
-We need proper data to monitor activities
-Applications should clearly log and report meaningful activities and events
-Architect applications and infrastructure to support telemetry
-Monitor both technical data and business data
-Visual displays
-Visualize telemetry to the entire organization
-BVIR - Big Visible Information Radiators - should project the health of the application and systems at all times
-Information about key DevOps metrics should also be visible (time since last deploy, time since last outage, Average lead time, etc.)
-Federated monitoring
-Aggregate data from various sources into a collection point
-Build big visual information radiators to display the aggregated data
-Provide accessibility and ways to drill down into individual application and infrastructure telemetry
-AI-OPs
-The monitoring required for effective DevOps produces a flurry of data, events and alerts
-AIOPs uses machine learning and Big Data techniques to quickly 
-Aggregate, correlate and analyze events
-Separate meaningful events from the “noise”
-Identify (and predict) root causes of issues
-Significantly reduce MTTR (Mean Time To Recovery)
-5.4 - Respond and Recover
-Respond - Purpose is Proactively detect and resolve production issues before they cause business disruption
-Chaos Engineering - 
-Refer to Netflix Simian Army - Latency Monkey, Conformity Monkey, Doctor Monkey, Janitor Monkey, Security Monkey, Chaos Gorilla
-Proactively detection
-Decoupling deployment from release allows problem detection before problems are exposed to customers
-Proactively look for problems and practice disaster and recovery situations
-Self sabotage, like chaos monkey helps build resilience
-These should be coordinated practices in high-assurance environments, along with failure modes and effect analysis (FMEA) during architecture and design
-Cross-team collaboration
-Dealing with production issues is everyone’s responsibility
-Having a team that can develop and support is preferred
-Teams from across the value stream should collaborate on solving production issues and identifying root causes
-Session replay
-Record customer sessions and replay them to test problems
-Make session replay available in production, testing, and development environments
-Consider security and privacy when implementing this capability
-Rollback and Fix Forward 
-Be prepared with a Rollback plan or a way to provide a quick fix forward
-Immutable infrastructure
-Making changes directly in the production environment creates configuration drifts and has inherent risks
-In an immutable infrastructure environment all changes are deployed through the Continuous Delivery Pipeline
-Makes no changes directly in Production
-Version control (covered in Build)
-Lesson 6 - Delivering Business Value with Release on Demand - Why? Business value; How Release on Demand
-6.1 Release on demand
-Release value to customers all at once or incrementally
-Feature toggles (covered in Deploy)
-Canary Releases
-Provide the ability to release value to part of the user population, be it internal or external
-Add or remove user segments based on business decisions
-Combine with selective deployments to enable incremental deployment and rollout
-Decouple release elements (covered in Architect)
-Dark Launches (covered in Deploy)
-6.2 Stabilize the solution
-Purpose: Ensure sustainability of high levels of business continuity, application service levels, and data protection
-Site Reliability Engineering (SRE)
+- 5.2 - Verify the Solution
+* Purpose: Assure that deployment solutions behave as expected in production before they are released to end users.
+* Production Testing
+  * Testing of features in the live environment
+  * This includes functional and nonfunctional testing
+  * Running synthetic transactions through the services to verify fitness for purpose (utility) and fitness for use (warranty)
+  * Test Automation (covered in Build)
+  * Test data management (covered in Test end-to-end)
+  * Nonfunctional Requirements (covered in Test end-to-end)
+- 5.3 - Monitor for Problems
+* Purpose: Quantitatively measure system and user behavior in real time
+* Full-stack telemetry
+  * We need proper data to monitor activities
+    * Applications should clearly log and report meaningful activities and events  
+    * Architect applications and infrastructure to support telemetry
+    * Monitor both technical data and business data
+* Visual displays
+   * Visualize telemetry to the entire organization
+   * BVIR - Big Visible Information Radiators - should project the health of the application and systems at all times
+   * Information about key DevOps metrics should also be visible (time since last deploy, time since last outage, Average lead time, etc.)
+* Federated monitoring
+   * Aggregate data from various sources into a collection point
+   * Build big visual information radiators to display the aggregated data
+   * Provide accessibility and ways to drill down into individual application and infrastructure telemetry
+* AI-OPs
+   * The monitoring required for effective DevOps produces a flurry of data, events and alerts
+   * AIOPs uses machine learning and Big Data techniques to quickly 
+     * Aggregate, correlate and analyze events
+     * Separate meaningful events from the “noise”
+     * Identify (and predict) root causes of issues
+     * Significantly reduce MTTR (Mean Time To Recovery)
+- 5.4 - Respond and Recover
+* Respond - Purpose is Proactively detect and resolve production issues before they cause business disruption
+* Chaos Engineering - Be prepared for roll-backs or Fix-forwards
+* Refer to Netflix Simian Army - Latency Monkey, Conformity Monkey, Doctor Monkey, Janitor Monkey, Security Monkey, Chaos Gorilla
+* Proactively detection
+   * Decoupling deployment from release allows problem detection before problems are exposed to customers
+   * Proactively look for problems and practice disaster and recovery situations
+   * Self sabotage, like chaos monkey helps build resilience
+   * These should be coordinated practices in high-assurance environments, along with failure modes and effect analysis (FMEA) during architecture and design
+* Cross-team collaboration
+   * Dealing with production issues is everyone’s responsibility
+   * Having a team that can develop and support is preferred
+   * Teams from across the value stream should collaborate on solving production issues and identifying root causes
+* Session replay
+  * Record customer sessions and replay them to test problems
+  * Make session replay available in production, testing, and development environments
+  * Consider security and privacy when implementing this capability
+* Immutable infrastructure
+  * Making changes directly in the production environment creates configuration drifts and has inherent risks
+  * In an immutable infrastructure environment all changes are deployed through the Continuous Delivery Pipeline
+  * Makes no changes directly in Production
+* Version control (covered in Build)
+
+- Lesson 6 - Delivering Business Value with Release on Demand - Why? Business value; How Release on Demand
+- 6.1 Release on demand
+* Release value to customers all at once or incrementally
+* Feature toggles (covered in Deploy)
+* Canary Releases
+   * Provide the ability to release value to part of the user population, be it internal or external
+   * Add or remove user segments based on business decisions
+   * Combine with selective deployments to enable incremental deployment and rollout
+* Decouple release elements (covered in Architect)
+* Dark Launches (covered in Deploy)
+
+- 6.2 Stabilize the solution
+* Purpose: Ensure sustainability of high levels of business continuity, application service levels, and data protection
+* Site Reliability Engineering (SRE)
 Ensure large systems are highly reliable and scalable 
 Shared ownership of system stability between Dev and OPs
 T-Shaped engineers with deep development and operations expertise
