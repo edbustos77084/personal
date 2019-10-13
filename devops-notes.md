@@ -193,121 +193,119 @@ Lesson 3 - Gaining Alignment with Continuous Exploration
     * Architect/Engineering and UX work as intermediaries for governance, interfaces, and dependencies
 
 Lesson 4 - Building Quality with Continuous Integration
-  Develop the solution
-  Build Continuously
-  Test end-to-end
-  Validate on a staging environment
-  Why? Quality, How? Continuous Integration (CI)
-  Sub-dimensions - What?
-  Develop - Implement a Story or a part of a Story and commit the code
-  Break features into stories
-  Techniques for splitting Features and Stories to fit within their boundaries (PI and Iteration, Respectively)
-  Workflow steps
-  Business rule variations
-  Major Efforts
-  Simple/Complex
-  Variation in data
-  Data methods
-  Defer system qualities
-  Operations
-  Use-case scenarios
-  Break out a spike
-  Test-Driven Development
-  Write a Test
-  Test Fails -> Write enough code to pass ->Test fails until it passes, Refactor -> Write another Test
-  Version control
-  Maintain all assets under version control
-  From requirements, to code, to configuration, to tests, and test data
-  Establish clear check-in and check-out procedures
-  Version control improves traceability for automating compliance
-  Engineering practice (Agile SW Engineering)
-  Modern engineering practices boost speed and quality
-  Test-First Mindset
-  Agile modeling
-  Emergent design
-  Pattern-based Coding
-  Pair work
-  Boeing and Lockheed Martin follow this principle
-  Pair work improves system quality, design decisions, knowledge sharing and team velocity
-  A collaborative effort of two team members: Dev/Dev; Dev & PO, Dev & Tester
-  Broader and less constraining than pair programming
-  Team members spend 20% to 80% time pairing
-  Spontaneous pairing, and purposeful rotations over time
-  Application telemetry
-  Application telemetry enables faster identification of problems from production incidents
-  Telemetry should cover all levels of the code - from methods, to components, to services, to the entire application
-  Application design must take into account operational health telemetry
-  Features must include the ability to measure the benefit hypothesis against both leading and trailing indicators
-  Threat modeling (covered in Architect)
-4.2 Build - Compile source files into deployable binaries, verify that code functions as the developer(s) intended & Merge dev branches to trunk
-  Continuous code integration - > Develop TDD, commit, Build, Mock Data, Version Control, App Package, Test Package -> End-2-End testing, Staging fully automated
-  Build and test automation
-  Initiate a build often, preferably on every commit
-  Run unit tests as part of the build 
-  Run static code analysis as part of the build
-Visualize and monitor the build and test process
-Report failures immediately
-Broken builds are the Highest Priority*
-Trunk-based development
-Single trunk/Main for all teams
-Each commit merges to Main
-Avoid long-lived branches
-Avoid multiple open branches
-Gated commit
-Gated commits ensure that broken code does not’ block the rest of the developers or the pipeline
-Only changes that have passed all build and quality checks are committed to version control
-Alert the code author immediately upon rejection
-Application Security
-Apply tools to automatically identify security vulnerabilities in the code during the build process
-Assess open source libraries continuously for known vulnerabilities to identify risks during development or build processes
-4.3 Test end-to-end
-The purpose is to validate changes against acceptance criteria in an integrated, production-simulated environment
-Test and production environment congruity
-Make sure the test environments match production as much as possible
-Maintain all configuration changes under version control
-Service Virtualization helps alleviate some cost considerations
-Invest in higher fidelity for more accurate testing
-Test Automation
-Many types of testing need to be run:
-Functional Testing
-Integration Testing
-Regression Testing
-Performance Testing
-Security Testing
-Exploratory Testing
-Penetration Testing
-Test Data Management
-Data for all types of tests must be managed
-Store data in a repository for consistent testing
-Emulate production data to ensure tests reflect realistic situations
-Service Virtualization (aka Simulator)
-Ability to spawn environments which match production to test
-Environments that support different types of testing
-Maintain environment data in source control
-Nonfunctional Requirements (NFRs)
-Non-functional Requirements are system qualities that support end-user functionality and system goals
-Sometimes known as the ‘ilities’ - Reliability, Usability, Scalability, Availability etc.
-NFRs are constraints on backlog items
-NFRs are not backlog items themselves
-4.4 - Stage
-The purpose is to Host fully-validated, systems in a production-grade environment, from which they can be deployed to production
-Maintain a staging environment
-Maintain a staging environment that matches production to prepare for moving to production
-Deploy to staging at least every iteration and run your system demo from there
-Ideally, deploy to staging automatically after all build and end-to-end tests have passed
-Blue/Green Deployment
-Maintain two identical environments: Idle and Live
-New features are deployed to idle environment on a continuous basis. While staged, the features can be tested and showcased in preparation for release
-New code is released to the idle environment, where it is thoroughly tested. When the code is ready to be released the team makes the idle environment active. 
-If problems are discovered after the switch, the active environment is switched back to idle, restoring the previously active environment
-Switching between environments is typically done by redirecting traffic at the load balancer
-System Demo
-Demo working integrated systems every two weeks
-New Features work together, and with existing functionality
-Demo from a Staging Environment that resembles production as much as possible
-Program stakeholders provide feedback
-Lesson 5 - Reducing Time-to Market with Continuous Deployment
-5.1 Deploy to Production
+* Develop the solution
+* Build Continuously
+* Test end-to-end
+* Validate on a staging environment
+-4.1 Develop the solution - Implement a Story or a part of a Story and commit the code
+  * Break features into stories
+    * Techniques for splitting Features and Stories to fit within their boundaries (PI and Iteration, Respectively)
+      * Workflow steps
+      * Business rule variations
+      * Major Efforts
+      * Simple/Complex
+      * Variation in data
+      * Data methods
+      * Defer system qualities
+      * Operations
+      * Use-case scenarios
+      * Break out a spike
+  * Test-Driven Development
+     * Write a Test
+     * Test Fails -> Write enough code to pass ->Test fails until it passes, Refactor -> Write another Test
+  * Version control
+     * Maintain all assets under version control
+     * From requirements, to code, to configuration, to tests, and test data
+     * Establish clear check-in and check-out procedures
+     * Version control improves traceability for automating compliance
+  * Agile Software Engineering
+    * Modern engineering practices boost speed and quality
+      * Test-First Mindset
+      * Agile modeling
+      * Emergent design
+      * Pattern-based Coding
+      * Code reviews
+  * NOTE (Boeing and Lockheed Martin follow this principles)
+  * Pair work improves system quality, design decisions, knowledge sharing and team velocity
+    * A collaborative effort of two team members: Dev/Dev; Dev & PO, Dev & Tester
+      * Broader and less constraining than pair programming
+      * Team members spend 20% to 80% time pairing
+      * Spontaneous pairing, and purposeful rotations over time
+  * Application telemetry
+  * Application telemetry enables faster identification of problems from production incidents
+     * Telemetry should cover all levels of the code - from methods, to components, to services, to the entire application
+     * Application design must take into account operational health telemetry
+     * Features must include the ability to measure the benefit hypothesis against both leading and trailing indicators
+  * Threat modeling (covered in Architect)
+- 4.2 Build - Compile source files into deployable binaries, verify that code functions as the developer(s) intended & Merge dev branches to trunk
+  * Continuous code integration - > Develop TDD, commit, Build, Mock Data, Version Control, App Package, Test Package -> End-2-End testing, Staging fully automated
+  * Build and test automation
+    * Initiate a build often, preferably on every commit
+    * Run unit tests as part of the build 
+    * Run static code analysis as part of the build
+    * Visualize and monitor the build and test process
+    * Report failures immediately 
+    * Broken builds are the Highest Priority*
+ * Trunk-based development
+    * Single trunk/Main for all teams
+    * Each commit merges to Main
+    * Avoid long-lived branches
+    * Avoid multiple open branches
+* Gated commit
+   * Gated commits ensure that broken code does not’ block the rest of the developers or the pipeline
+   * Only changes that have passed all build and quality checks are committed to version control
+   * Alert the code author immediately upon rejection
+* Application Security 
+  * Apply tools to automatically identify security vulnerabilities in the code during the build process
+  * Assess open source libraries continuously for known vulnerabilities to identify risks during development or build processes
+- 4.3 Test end-to-end
+* The purpose is to validate changes against acceptance criteria in an integrated, production-simulated environment
+  * Test and production environment congruity
+    * Make sure the test environments match production as much as possible
+    * Maintain all configuration changes under version control
+    * Service Virtualization helps alleviate some cost considerations
+    * Invest in higher fidelity for more accurate testing
+ * Test Automation
+   * Many types of testing need to be run:
+     * Functional Testing
+     * Integration Testing
+     * Regression Testing
+     * Performance Testing
+     * Security Testing
+     * Exploratory Testing
+     * Penetration Testing
+* Test Data Management
+  * Data for all types of tests must be managed
+  * Store data in a repository for consistent testing
+  * Emulate production data to ensure tests reflect realistic situations
+* Service Virtualization (aka Simulator)
+  * Ability to spawn environments which match production to test
+  * Environments that support different types of testing
+  * Maintain environment data in source control
+* Nonfunctional Requirements (NFRs)
+* Non-functional Requirements are system qualities that support end-user functionality and system goals
+   * Sometimes known as the ‘ilities’ - Reliability, Usability, Scalability, Availability etc.
+   * NFRs are constraints on backlog items
+   * NFRs are not backlog items themselves
+- 4.4 - Stage
+* The purpose is to Host fully-validated, systems in a production-grade environment, from which they can be deployed to production
+* Maintain a staging environment
+   * Maintain a staging environment that matches production to prepare for moving to production
+   * Deploy to staging at least every iteration and run your system demo from there
+   * Ideally, deploy to staging automatically after all build and end-to-end tests have passed
+* Blue/Green Deployment
+   * Maintain two identical environments: Idle and Live
+   * New features are deployed to idle environment on a continuous basis. While staged, the features can be tested and showcased in preparation for release
+   * New code is released to the idle environment, where it is thoroughly tested. When the code is ready to be released the team makes the idle environment active. 
+   * If problems are discovered after the switch, the active environment is switched back to idle, restoring the previously active environment
+   * Switching between environments is typically done by redirecting traffic at the load balancer
+* System Demo
+   * Demo working integrated systems every two weeks
+   * New Features work together, and with existing functionality
+   * Demo from a Staging Environment that resembles production as much as possible
+   * Program stakeholders provide feedback
+- Lesson 5 - Reducing Time-to Market with Continuous Deployment
+* 5.1 Deploy to Production
 Purpose changes into production with high frequency and low risk
 Dark Launches
 Separate deploy (to production) from release (to end users)
