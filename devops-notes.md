@@ -112,92 +112,85 @@ https://vimeo.com/325445925/59913369d4
    * Rolled %C&A = %C&A 1 * %C&A 2 * %C&An….* 100
 
 Lesson 3 - Gaining Alignment with Continuous Exploration
-  Create solution hypotheses
-  Collaborate and research customer needs
-  Architect the solution for continuous delivery
-  Synthesize the vision, the roadmap, and the Program Backlog
-  Hypothesize
-  Define the hypothesis to be validated through the Continuous Delivery Pipeline
-  Skills - Lean Startup, Innovation Accounting
-  Lean Startup - cycle focuses on identifying the viability of ideas
-  It follows the Plan-Do-Check-Adjust Cycle (PDCA)
-  MVP - Establish a baseline to test assumptions and gather objective data
-
-Evaluate hypothesis: 
-  If the benefit hypothesis has been proven true, the Value Streams will implement more Features
-  If the hypothesis is proven false, the decision is made to either pivot with a new hypothesis or to stop work on the Epic
-
-Innovation Accounting
-  New products and new features are hard to measure by traditional accounting standards
-  When defining an MVP it is important to use metrics that will validate its success or failure
-  It is important to focus on metrics that demonstrate real customer engagement and not on Vanity Metrics
-
-3.2 - Collaborate and Research customer needs
-  Work with multiple stakeholders to understand customer needs
-  Skills - Lean UX, Research
-  Lean UX - User Experience is a mindset, culture and a process that implements functionality in minimum viable increments and determines success by measuring results against a benefit hypothesis
-  Features must be broken into Minimal Marketable Features - the minimum functionality that the teams can build to learn whether the benefit hypothesis is valid or not
-
-Research
-  Design Thinking - Explore the problem and solution spaces using personas, journey maps empathy maps, and other Agile product management techniques
-  Customer visits and Gemba Walks - A Gemba work is the place where the work is performed, can be used by developers to observe how internal stakeholders execute the steps and specific activities in their operational value streams
-  Elicitation - There are a variety of structured elicitations techniques that can be used, such as interviews, surveys, competitive analysis, requirements workshops, and use-case modeling. 
-  Trade studies - Teams engage in trade studies to determine the most practical characteristics of a solution
-
-3.3 - Architect the Solution for continuous delivery
-  Architect for testability
-  In a system that is designed for testability, all jobs require less time
-  Patterns that can accelerate value flow
-  Domain Driven Design
-  Loose Coupling & API-Driven Architecture
-  Cloud-Native Architecture
-  Microservices & Containerization
-  Serverless Architecture
-  Strangler pattern
-  Separate deploy and release
-  Separate deploy to production from release
-  Hide all new functionality under Feature toggles
-  Enable the ability to deploy and verify in production and release on demand
-  Decouple releases elements 
-  Different parts of the solution require different release strategies
-  Architect the solution to enable the various strategies and to shift them over time based on business demand
-  Architect for operations
-  Take the operational needs into account
-  Build telemetry and logging capabilities into every application and into the solution as a whole
-  Allow services to be downgraded or even removed in times of high loads or in response to incidents
-  Build capabilities for Fast Recovery and for Fix-Forward
-  Threat modeling
-  Information security considerations should start early
-  Identify potential security threats and attack vectors
-  Architect to address security concerns
-  Ensure backlogs reflect important security requirements
-
-3.4 - Synthesize the Vision, the Roadmap, and the Program Backlog
-  Purpose: Synthesize the hypotheses, research, collaboration, and architecture into a vision, a roadmap, and backlog - Gain alignment with PI Planning
-  Skills
-  Feature Writing
-  ‘Feature’ is an industry-standard term familiar to marketing and Product Management
-  Benefit hypothesis justifies Feature implementation cost, and provides business perspective when making scope decisions
-  Acceptance criteria are typically defined during Program Backlog refinement
-  Reflects functional and Nonfunctional Requirements (NFRs)
-  Fits in one Program Increment
-  Behavior-Driven Development (BDD)
-  Behavior-driven development is a test-first approach to writing requirements
-  Gherkin Syntax (Given-When-Then) is commonly used
-  Permits building executable specifications
-  Acceptance criteria become executable tests
-  Economic Prioritization
-  In a flow system, job sequencing is the key to economic outcomes
-  Give preference to jobs with Shorter Duration and higher Cost of Delay (CoD)
-  WSJF provides a way of understanding the cost of delay and focusing on items that provide the best cost of delay reduction in the shortest time
-
-PI Planning
-  Planning is a cadence-based, face-to-face event that serves as the heartbeat of the Agile Release Train (ART), aligning all the teams on the ART to a shared mission and Vision.
-  Two days every 8-12 weeks (10 weeks is typical)
-  Everyone attends in person if at all possible
-  Product Management owns Feature priorities
-  Development teams own Story Planning, and high-level estimates
-  Architect/Engineering and UX work as intermediaries for governance, interfaces, and dependencies
+ - Create solution hypotheses
+ - Collaborate and research customer needs
+ - Architect the solution for continuous delivery
+ - Synthesize the vision, the roadmap, and the Program Backlog
+ - 3.1 - Hypothesize
+  * Define the hypothesis to be validated through the Continuous Delivery Pipeline
+  * Lean Startup, Innovation Accounting
+    * Lean Startup - cycle focuses on identifying the viability of ideas
+    * It follows the Plan-Do-Check-Adjust Cycle (PDCA)
+    * MVP-Establish a baseline to test assumptions and gather objective data
+  * Evaluate hypothesis: 
+    * If the benefit hypothesis has been proven true, the Value Streams will implement more Features
+    * If the hypothesis is proven false, the decision is made to either pivot with a new hypothesis or to stop work on the Epic
+ * Innovation Accounting
+    * New products and new features are hard to measure by traditional accounting standards
+    * When defining an MVP it is important to use metrics that will validate its success or failure
+    * It is important to focus on metrics that demonstrate real customer engagement and not on Vanity Metrics
+- 3.2 - Collaborate and Research customer needs
+  * Work with multiple stakeholders to understand customer needs
+  * Lean UX, Research
+    * Lean UX - User Experience is a mindset, culture and a process that implements functionality in minimum viable increments and determines success by measuring results against a benefit hypothesis
+    * Features must be broken into Minimal Marketable Features - the minimum functionality that the teams can build to learn whether the benefit hypothesis is valid or not
+ * Research
+   * Design Thinking - Explore the problem and solution spaces using personas, journey maps empathy maps, and other Agile product management techniques
+   * Customer visits and Gemba Walks - A Gemba work is the place where the work is performed, can be used by developers to observe how internal stakeholders execute the steps and specific activities in their operational value streams
+   * Elicitation - There are a variety of structured elicitations techniques that can be used, such as interviews, surveys, competitive analysis, requirements workshops, and use-case modeling. 
+   * Trade studies - Teams engage in trade studies to determine the most practical characteristics of a solution
+- 3.3 - Architect the Solution for continuous delivery
+  * Architect
+    * Architect for testability
+      * In a system that is designed for testability, all jobs require less time
+    * Patterns that can accelerate value flow
+      * Domain Driven Design
+      * Loose Coupling & API-Driven Architecture
+      * Cloud-Native Architecture
+      * Microservices & Containerization
+      * Serverless Architecture
+      * Strangler pattern
+  * Separate deploy and release
+    * Separate deploy to production from release
+    * Hide all new functionality under Feature toggles
+    * Enable the ability to deploy and verify in production and release on demand
+  * Decouple releases elements 
+    * Different parts of the solution require different release strategies
+    * Architect the solution to enable the various strategies and to shift them over time based on business demand
+  * Architect for operations
+    * Take the operational needs into account
+    * Build telemetry and logging capabilities into every application and into the solution as a whole
+    * Allow services to be downgraded or even removed in times of high loads or in response to incidents
+    * Build capabilities for Fast Recovery and for Fix-Forward
+  * Threat modeling
+    * Information security considerations should start early
+    * Identify potential security threats and attack vectors
+    * Architect to address security concerns
+    * Ensure backlogs reflect important security requirements
+- 3.4 - Synthesize the Vision, the Roadmap, and the Program Backlog
+  * Purpose: Synthesize the hypotheses, research, collaboration, and architecture into a vision, a roadmap, and backlog - Gain alignment with PI Planning
+  * Feature Writing
+    * ‘Feature’ is an industry-standard term familiar to marketing and Product Management
+    * Benefit hypothesis justifies Feature implementation cost, and provides business perspective when making scope decisions
+    * Acceptance criteria are typically defined during Program Backlog refinement
+    * Reflects functional and Nonfunctional Requirements (NFRs)
+    * Fits in one Program Increment
+  * Behavior-Driven Development (BDD)
+    * Behavior-driven development is a test-first approach to writing requirements
+    * Gherkin Syntax (Given-When-Then) is commonly used
+    * Permits building executable specifications
+    * Acceptance criteria become executable tests
+  * Economic Prioritization
+    * In a flow system, job sequencing is the key to economic outcomes
+    * Give preference to jobs with Shorter Duration and higher Cost of Delay (CoD)
+    * WSJF provides a way of understanding the cost of delay and focusing on items that provide the best cost of delay reduction in the shortest time
+* PI Planning
+  * Planning is a cadence-based, face-to-face event that serves as the heartbeat of the Agile Release Train (ART), aligning all the teams on the ART to a shared mission and Vision.
+    * Two days every 8-12 weeks (10 weeks is typical)
+    * Everyone attends in person if at all possible
+    * Product Management owns Feature priorities
+    * Development teams own Story Planning, and high-level estimates
+    * Architect/Engineering and UX work as intermediaries for governance, interfaces, and dependencies
 
 Lesson 4 - Building Quality with Continuous Integration
   Develop the solution
