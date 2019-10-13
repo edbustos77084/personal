@@ -391,7 +391,7 @@ Lesson 4 - Building Quality with Continuous Integration
   * Makes no changes directly in Production
 * Version control (covered in Build)
 
-- Lesson 6 - Delivering Business Value with Release on Demand - Why? Business value; How Release on Demand
+Lesson 6 - Delivering Business Value with Release on Demand - Why? Business value; How Release on Demand
 - 6.1 Release on demand
 * Release value to customers all at once or incrementally
 * Feature toggles (covered in Deploy)
