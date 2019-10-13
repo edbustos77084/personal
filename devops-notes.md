@@ -1,84 +1,79 @@
 # SAFe DevOps Health Radar
 
-## Continuous Exploration: Why? Alignment How? Continuous Exploration
+### Continuous Exploration: Why? Alignment How? Continuous Exploration
 - Hypothesize
 - Collaborate & Research 
 - Architect
 - Synthesize
-## Continuous Integration - Why? Quality, How? Continuous Integration
+### Continuous Integration - Why? Quality, How? Continuous Integration
 - Develop
 - Build
 - Test End-to-End
 - Stage
-## Continuous Deployment  - Why? Time to Market - How? Continuous Deployment, 
+### Continuous Deployment  - Why? Time to Market - How? Continuous Deployment, 
 - Deploy
 - Verify
 - Monitor
 - Respond
-## Release on Demand - Why? Business Value, How? Release on Demand
+### Release on Demand - Why? Business Value, How? Release on Demand
 - Release
 - Stabilize
 - Measure
 - Learn
-## Repeat.....
+### Repeat.....
 
 Lesson 1- Introducing DevOps
-1.1. Recognize the problem to be solved. 
-  Every enterprise must be able to quickly validate the wants and needs of customers. 
-  Every enterprise must be able to release Features when customers need them the most. 
-1.2 DevOps 
-  DevOps is a set of software development practices that combines software development (Dev) and information technology operations (ops) to shorten the systems development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives. 
-  Lack of alignment impedes progress
-  Different groups in the organization have different goals and directions
-  The lack of alignment means their different efforts cancel each other out. 
-  This creates a feeling of constant work with little or no progress
-  The Continuous Delivery Pipeline enables the flow of value
-  The DevOps Health Radar helps synchronize the pipeline
-1.3 Describe continuous security and testing
-  The role of continuous security
-  Information security is a key concept in SAFe DevOps
-  DevSecOps concepts present key principles for value delivery 
-  Security affects every dimension of the continuous delivery cycle 
-  Information security should be part of every DevOps transformation
-  The Role of continuous testing
-  Testing is an ongoing activity
-  We build quality in by addressing testing and quality throughout the continuous delivery cycle
-  Automated testing and quality assurance should be part of every Devops transformation
-1.4 - Describe core DevOps principles
-  A CALMR approach to DevOps
-  Culture - Establish a culture of shared responsibility for development, deployment and operations. 
-  Automation - Automate the Continuous Delivery Pipeline
-  Lean flow - Keep batch sizes small, limit WIP, and provide extreme visibility
-  Measurement - Measure the flow through the pipeline, Implement full-stack telemetry.
-  Recovery - Architect and enable low-risk releases, Establish fast recovery, fast reversion, and fast fix-forward
-  
-Culture 
-  Adopt a culture of shared responsibility for development and deployment
-  Requires a tolerance for failure and rapid recovery, and rewards risk taking
-  Learning across silos is encouraged
-  
-Automate
-  Automation is a key concept in DevOps
-  Automate as much as you can from the Continuous Delivery Pipeline and improve the flow of value
-  Build a comprehensive toolchain to help teams release value more frequently
-  Focus on automating healthy processes, if the underlying process is broken, fix it before automating it. 
-  
-Lean Flow 
-  Identify bottlenecks to the flow of value
-  Decrease the batch sizes of the work
-  Manage and reduce queue lengths
-
-Measure Everything
-  Collect data on business, application, infrastructure, and client layers
-  Collect data about the deployment pipeline itself
-  Maintain different telemetry for different stakeholders
-  Broadcast measurements
-  Continuously improve telemetry during and after problem solving
-
-Architect for release-ability and Recovery
-  Adopt a stop-the line mentality
-  Plan for and rehearse failures
-  Build the environment for both roll-back and fix-forward
+- 1.1. Recognize the problem to be solved. 
+  * Every enterprise must be able to quickly validate the wants and needs of customers. 
+  * Every enterprise must be able to release Features when customers need them the most. 
+- 1.2 DevOps 
+  * DevOps is a set of software development practices that combines software development (Dev) and information technology operations (ops) to shorten the systems development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives. 
+  * Lack of alignment impedes progress
+    * Different groups in the organization have different goals and directions
+    * The lack of alignment means their different efforts cancel each other out. 
+    * This creates a feeling of constant work with little or no progress
+    * The Continuous Delivery Pipeline enables the flow of value
+    * The DevOps Health Radar helps synchronize the pipeline
+- 1.3 Describe continuous security and testing
+  * The role of continuous security
+    * Information security is a key concept in SAFe DevOps
+    * DevSecOps concepts present key principles for value delivery 
+    * Security affects every dimension of the continuous delivery cycle 
+    * Information security should be part of every DevOps transformation
+  * The Role of continuous testing
+    * Testing is an ongoing activity
+    * We build quality in by addressing testing and quality throughout the continuous delivery cycle
+    * Automated testing and quality assurance should be part of every Devops transformation
+- 1.4 - Describe core DevOps principles
+  * A CALMR approach to DevOps
+    * Culture - Establish a culture of shared responsibility for development, deployment and operations. 
+    * Automation - Automate the Continuous Delivery Pipeline
+    * Lean flow - Keep batch sizes small, limit WIP, and provide extreme visibility
+    * Measurement - Measure the flow through the pipeline, Implement full-stack telemetry.
+    * Recovery - Architect and enable low-risk releases, Establish fast recovery, fast reversion, and fast fix-forward
+ * DevOps is a Cultural shift 
+    * Adopt a culture of shared responsibility for development and deployment
+    * Requires a tolerance for failure and rapid recovery, and rewards risk taking
+    * Learning across silos is encouraged
+ * Automate
+    * Automation is a key concept in DevOps
+    * Automate as much as you can from the Continuous Delivery Pipeline and improve the flow of value
+    * Build a comprehensive toolchain to help teams release value more frequently
+    * Focus on automating healthy processes, if the underlying process is broken, fix it before automating it. 
+ * Lean Flow 
+    * Identify bottlenecks to the flow of value
+    * Decrease the batch sizes of the work
+    * Manage and reduce queue lengths
+* Measure Everything
+    * Collect data on business, application, infrastructure, and client layers
+    * Collect data about the deployment pipeline itself
+    * Maintain different telemetry for different stakeholders
+    * Broadcast measurements
+    * Continuously improve telemetry during and after problem solving
+* Architect for release-ability and Recovery
+    * Adopt a stop-the line mentality
+    * Plan for and rehearse failures
+    * Build the environment for both roll-back and fix-forward
 
 Lesson 2 - Mapping your Pipeline
 2.1 - Explain the purpose of mapping the Value Stream
