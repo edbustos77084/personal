@@ -126,11 +126,11 @@ Lesson 2 - Mapping your Pipeline
 https://vimeo.com/325445925/59913369d4
 
 - 2.2 - Visualize the current state of the delivery pipeline using key metrics
-* Identify the steps and people (current pipeline)
-* Value stream measurements
- * PT - Process Time (Actual value-added work)
- * LT - Lead Time - (Time from when work was ready after the previous station to completion)
- * Percent Complete and Accurate (%C&A) - Percent of work that the next station could process as-is (can only be calculated by talking to the downstream partner)
+ * Identify the Steps and People (current pipeline)
+ * Value Stream Measurements
+   * PT - Process Time (Actual value-added work)
+   * LT - Lead Time - (Time from when work was ready after the previous station to completion)
+   * Percent Complete and Accurate (%C&A) - Percent of work that the next station could process as-is (can only be calculated by talking to the downstream partner)
    * Measure the steps  (PT 4hrs/ LT 4 hrs)
    * Activity Ratio = PT/LT
    * Rolled %C&A = %C&A 1 * %C&A 2 * %C&An….* 100
