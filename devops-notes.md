@@ -38,6 +38,9 @@ Lesson 1- Introducing DevOps
     * This creates a feeling of constant work with little or no progress
     * The Continuous Delivery Pipeline enables the flow of value
     * The DevOps Health Radar helps synchronize the pipeline
+  * Who is DevOps?
+    * Business, Operations, Development, Security, Architecture, Complaiance
+    * 2009 - O'Reilly Velocity Confrence -> 2012 to 2014 Vendors flood in and took it mainstream
 - 1.3 Describe continuous security and testing
   * The role of continuous security
     * Information security is a key concept in SAFe DevOps
