@@ -60,10 +60,18 @@ Lesson 1- Introducing DevOps
     * DevSecOps concepts present key principles for value delivery 
     * Security affects every dimension of the continuous delivery cycle 
     * Information security should be part of every DevOps transformation
-  * The Role of continuous testing
+    * CE = Architecture (Threat Modeling)
+    * CI = Build (Application Security)
+    * CD = Verify (Penetration Testing)
+    * RD = Stabilize (Continuous security monitoring)
+  * The Role of Continuous testing
     * Testing is an ongoing activity
     * We build quality in by addressing testing and quality throughout the continuous delivery cycle
     * Automated testing and quality assurance should be part of every Devops transformation
+    * CE = Synthesize (BDD - Behavioural Driven Development)
+    * CI = Develop (TDD - Test Driven Development)
+    * CI = Build & Test End-to-End (Test Automation)
+    * CD = Verify (Production testing)
 - 1.4 - Describe core DevOps principles
   * A CALMR approach to DevOps
     * Culture - Establish a culture of shared responsibility for development, deployment and operations. 
