@@ -50,6 +50,10 @@ Lesson 1- Introducing DevOps
     * Less time spent fixing security issues
     * More frequent deployments
     * More likely to exceed profitability goals
+  * The Continuous Delivery Pipeline "enables" the flow of Value
+    * Continuous Exploration -> Continuous Integration -> Continuous Deployment -> Release on Demand
+  * The DevOps Health Radar helps "synchronize" the pipeline
+    * Every team should complete a full revolution in less than 24 hours 
 - 1.3 Describe continuous security and testing
   * The role of continuous security
     * Information security is a key concept in SAFe DevOps
