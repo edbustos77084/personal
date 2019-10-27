@@ -1,4 +1,4 @@
-#Kubernetes Notes
+# Kubernetes Notes
 
-## Service - NodePort
+### Service - NodePort
 One method to connect your container to the outside world
