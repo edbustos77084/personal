@@ -1,4 +1,5 @@
 # SAFe DevOps Health Radar
+https://www.scaledagileframework.com/devops/
 
 ### Continuous Exploration: 
 #### Why? Alignment; How? Continuous Exploration
@@ -38,16 +39,40 @@ Lesson 1- Introducing DevOps
     * This creates a feeling of constant work with little or no progress
     * The Continuous Delivery Pipeline enables the flow of value
     * The DevOps Health Radar helps synchronize the pipeline
+  * Who is DevOps?
+    * Business, Operations, Development, Security, Architecture, Complaiance
+    * 2009 - O'Reilly Velocity Confrence -> 2012 to 2014 Vendors flood in and took it mainstream
+  * DevOps benefits
+    * Faster lead time
+    * Faster recovery
+    * More time spent on new work
+    * Improved employee Net Promoter Score
+    * Fewer defects
+    * Less time spent fixing security issues
+    * More frequent deployments
+    * More likely to exceed profitability goals
+  * The Continuous Delivery Pipeline "enables" the flow of Value
+    * Continuous Exploration -> Continuous Integration -> Continuous Deployment -> Release on Demand
+  * The DevOps Health Radar helps "synchronize" the pipeline
+    * Every team should complete a full revolution in less than 24 hours 
 - 1.3 Describe continuous security and testing
   * The role of continuous security
     * Information security is a key concept in SAFe DevOps
     * DevSecOps concepts present key principles for value delivery 
     * Security affects every dimension of the continuous delivery cycle 
     * Information security should be part of every DevOps transformation
-  * The Role of continuous testing
+    * CE = Architecture (Threat Modeling)
+    * CI = Build (Application Security)
+    * CD = Verify (Penetration Testing)
+    * RD = Stabilize (Continuous security monitoring)
+  * The Role of Continuous testing
     * Testing is an ongoing activity
     * We build quality in by addressing testing and quality throughout the continuous delivery cycle
     * Automated testing and quality assurance should be part of every Devops transformation
+    * CE = Synthesize (BDD - Behavioural Driven Development)
+    * CI = Develop (TDD - Test Driven Development)
+    * CI = Build & Test End-to-End (Test Automation)
+    * CD = Verify (Production testing)
 - 1.4 - Describe core DevOps principles
   * A CALMR approach to DevOps
     * Culture - Establish a culture of shared responsibility for development, deployment and operations. 
@@ -102,11 +127,11 @@ Lesson 2 - Mapping your Pipeline
 https://vimeo.com/325445925/59913369d4
 
 - 2.2 - Visualize the current state of the delivery pipeline using key metrics
-* Identify the steps and people (current pipeline)
-* Value stream measurements
- * PT - Process Time (Actual value-added work)
- * LT - Lead Time - (Time from when work was ready after the previous station to completion)
- * Percent Complete and Accurate (%C&A) - Percent of work that the next station could process as-is (can only be calculated by talking to the downstream partner)
+ * Identify the Steps and People (current pipeline)
+ * Value Stream Measurements
+   * PT - Process Time (Actual value-added work)
+   * LT - Lead Time - (Time from when work was ready after the previous station to completion)
+   * Percent Complete and Accurate (%C&A) - Percent of work that the next station could process as-is (can only be calculated by talking to the downstream partner)
    * Measure the steps  (PT 4hrs/ LT 4 hrs)
    * Activity Ratio = PT/LT
    * Rolled %C&A = %C&A 1 * %C&A 2 * %C&An….* 100
