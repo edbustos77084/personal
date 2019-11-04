@@ -95,6 +95,9 @@
 	+ docker image rm ubuntu
 		
 		
+## Install and Deploy Kubernetes on Ubuntu
++ https://vitux.com/install-and-deploy-kubernetes-on-ubuntu/
+
 ## Ubuntu 19.04 in 4th floor Lab - Sandbox
 + VLAN2 - LR0 - 16.x.x.x
 + VLAN3 - Private { 192.168.3.200-254}
@@ -137,6 +140,8 @@
 ## Check for ports in Use:
 + $ sudo lsof -i -P -n | grep LISTEN
 + $ sudo netstat -tulpn | grep LISTEN
++ $ ss
++ $ ss/netstat
 
 ## Change Hostname if necessary:
 + $ sudo hostname new-name
