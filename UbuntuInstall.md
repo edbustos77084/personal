@@ -132,6 +132,11 @@
 + $ sudo ufw allow ssh
 + $ sudo ufw enable
 + $ sudo ufw status 
++ $ sudo ufw disable (will disable the firewall)
+
+## Check for ports in Use:
++ $ sudo lsof -i -P -n | grep LISTEN
++ $ sudo netstat -tulpn | grep LISTEN
 
 ## Change Hostname if necessary:
 + $ sudo hostname new-name
@@ -228,23 +233,19 @@ Problems were seen when selecting eno5.2 if using a private vlan, you may still 
 
 ## Configure DHCP server:
 + Download the necessary files before 
-
 + sudo vim /etc/dhcp/dhcpd.conf
 
-
 ## How to verify your DHCP lease:
-+ 	netplan ip leases enp1s0  (substitute your adapter identified via ifconfig)
++ netplan ip leases enp1s0  (substitute your adapter identified via ifconfig)
 
 ## How to verify what DHCP leases the server has handed out:
-+ 	cat /var/lib/dhcp/dhcpd.leases
++ cat /var/lib/dhcp/dhcpd.leases
 
 ## Start and Stop DHCP server
 + sudo service isc-dhcp-server restart
 + sudo service isc-dhcp-server start
-+ sudo service isc-dhcp-server stop 
-
++ sudo service isc-dhcp-server stop
 + From <https://help.ubuntu.com/community/isc-dhcp-server> 
-
 + Verify if DHCP server is running
 + sudo service isc-dhcp-server status
 	
