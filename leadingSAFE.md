@@ -13,4 +13,6 @@
     + Phase gate SDLC isn't helping reduce risk
     + Problems discovered too late
     + Poor morale
-    
++ Management's challenge
+    + _It is not enough that management commit themselves to quality and productivity...They must know what it is they must do. Such a responsibility cannot be delegated._
+    _--W. Edwards Deming_
