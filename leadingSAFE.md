@@ -118,5 +118,15 @@ https://www.scaledagileframework.com/
 + Empower decision makers with Lean-Agile Budgeting
 + Provide visibility and governance to cross-cutting initiatves with Kanban
 
+### Value Stream level
++ Identify value streams 
++ Establish cadence and synchronization
++ Define stream boundaries, people, deliverables, ARTs
++ Capture a Value Stream Canvas   
+
+![](images/canvas.PNG)
+
+
+
 
 
