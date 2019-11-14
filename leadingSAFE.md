@@ -124,7 +124,7 @@ https://www.scaledagileframework.com/
 + Define stream boundaries, people, deliverables, ARTs
 + Capture a Value Stream Canvas   
 
-![](images/canvas.PNG)
+![](images/Canvas.PNG)
 
 
 
