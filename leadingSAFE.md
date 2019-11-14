@@ -52,7 +52,7 @@
 https://www.scaledagileframework.com/
 
 ### Agile Teams
-+ Cross-functional, self-orgainizng entities that can *define*, *build* and *test* a value stream
++ Cross-functional, self-orgainizng entities that can **define**, **build** and **test** a value stream
 + Apply basic scientific practices: Plan - Do - Check - Adjust   
 
 ![](images/agileteam.PNG)
@@ -69,10 +69,26 @@ https://www.scaledagileframework.com/
 + Test automation supports rapid regression testing
 + Implement testing in the same iteration
 + Maintained under version control
-+ *Passing* vs. *Not-yet-passing* and *broken automated tests* are the *real* iteration progress indicator   
++ **Passing** vs. **Not-yet-passing** and *broken automated tests* are the *real* iteration progress indicator   
 
 ![](images/test.PNG)
 
 ### Agile Release Train
 + Align 50-125 practitioners to a *common* mission
 + Apply cadence and synchronization across the agile teams, Program Increments every 8-12 weeks
++ Provide Vision, Roadmap, architecture guidance
+
+### Architecture Runway
++ Architecture Runway - existing code, hardware components, etc. that technically enable near-term business features
+    + Enablers build up the runway
+    + Features consume it
+    + Architectural Runway must be continuously maintained
+    + Enablers extend the runway   
+
+![](images/runway.PNG)
+
+### ART takes a System View
+![](images/art.PNG)
+
+
+
