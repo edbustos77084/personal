@@ -40,3 +40,12 @@
 1. Apply cadence, synchronize with cross-domain planning
 1. Unlock the intrinsic motivation of knowledge workers
 1. Decentralize decision-making
+
+### Building incrementally accelerated value and delivery
+![](images/building.PNG)
+
+### Agile delivers better economics 
+![](images/economics.PNG)
+
+### Review the level of SAFE website
+https://www.scaledagileframework.com/
