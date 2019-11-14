@@ -131,6 +131,10 @@ https://www.scaledagileframework.com/
 
      _--W. Edwards Deming_
 
+### Business Results
+![](images/results.PNG)
+
+
 
 
 
