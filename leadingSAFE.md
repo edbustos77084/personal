@@ -1,5 +1,5 @@
 # Leading SAFe 
-+ From Dean Leffingwell, create of SAFe on the high-level overview of Scaled Agile
++ From Dean Leffingwell, creator of SAFe high-level overview of Scaled Agile
 
 ## Review the case studies
 + Lean Agile mindset
@@ -88,7 +88,35 @@ https://www.scaledagileframework.com/
 ![](images/runway.PNG)
 
 ### ART takes a System View
++ Cross-functional virtual team   
+
 ![](images/art.PNG)
+
+### Syncrhonized on PI Planning   
++ All stakeholders should be face-to-face 
++ Management sets the mission, with minimum possible constraints
++ Requirements and design emerge
++ Important stakeholders decisions are accelerated
++ Teams create and take the responsiblity for the **plans**   
+
+### Demonstrate the full-system every two weeks
++ An integrated solution demo
++ Objective milestone
++ Demo from the staging environment or near proxy
+
+### Inspect and Adapt every PI
++ Every PI, teams systematically address the larger impediments that are limiting velocity
+    1. Agree on the problem to solve
+    1. Apply root cause analysis
+    1. Identify the biggest root cause, using Pareto Analysis
+    1. Restate the new problem for the biggest root cause
+    1. Brainstorm solutions 
+
+### Build a Portfolio organized around Value
++ Identify and organize around Value Streams
++ Communicate enterprise strategy with Strategic Themes
++ Empower decision makers with Lean-Agile Budgeting
++ Provide visibility and governance to cross-cutting initiatves with Kanban
 
 
 
