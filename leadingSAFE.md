@@ -106,11 +106,11 @@ https://www.scaledagileframework.com/
 
 ### Inspect and Adapt every PI
 + Every PI, teams systematically address the larger impediments that are limiting velocity
-    1. Agree on the problem to solve
-    1. Apply root cause analysis
-    1. Identify the biggest root cause, using Pareto Analysis
-    1. Restate the new problem for the biggest root cause
-    1. Brainstorm solutions 
+    + Agree on the problem to solve
+    + Apply root cause analysis
+    + Identify the biggest root cause, using Pareto Analysis
+    + Restate the new problem for the biggest root cause
+    + Brainstorm solutions 
 
 ### Build a Portfolio organized around Value
 + Identify and organize around Value Streams
