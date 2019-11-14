@@ -49,3 +49,26 @@
 
 ### Review the level of SAFE website
 https://www.scaledagileframework.com/
+
+### Agile Teams
++ Cross-functional, self-orgainizng entities that can *define*, *build* and *test* a value stream
++ Apply basic scientific practices: Plan - Do - Check - Adjust
+![](images/agileteam.PNG)
+
+### Integrate frequently
++ Integration points control product development
++ Avoid physical branching for software
++ Frequently integrate hardware branches
++ Use development by intention in inter-team dependencies
+![](images/integrate.PNG)
+
+### Apply test automation
++ Test automation supports rapid regression testing
++ Implement testing in the same iteration
++ Maintained under version control
++ *Passing* vs. *Not-yet-passing* and *broken automated tests* are the *real* iteration progress indicator 
+![](images/test.PNG)
+
+### Agile Release Train
++ Align 50-125 practitioners to a *common* mission
++ Apply cadence and synchronization across the agile teams, Program Increments every 8-12 weeks
