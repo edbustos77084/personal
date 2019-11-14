@@ -27,7 +27,8 @@
 
 ### Embrace Lean-Agile value
 + House of Lean
-+ Agile Manifesto
++ Agile Manifesto   
+
 ![](images/houseLean.PNG)
 
 ### SAFe Lean-Agile Principles
@@ -52,7 +53,8 @@ https://www.scaledagileframework.com/
 
 ### Agile Teams
 + Cross-functional, self-orgainizng entities that can *define*, *build* and *test* a value stream
-+ Apply basic scientific practices: Plan - Do - Check - Adjust
++ Apply basic scientific practices: Plan - Do - Check - Adjust   
+
 ![](images/agileteam.PNG)
 
 ### Integrate frequently
@@ -60,13 +62,15 @@ https://www.scaledagileframework.com/
 + Avoid physical branching for software
 + Frequently integrate hardware branches
 + Use development by intention in inter-team dependencies
+
 ![](images/integrate.PNG)
 
 ### Apply test automation
 + Test automation supports rapid regression testing
 + Implement testing in the same iteration
 + Maintained under version control
-+ *Passing* vs. *Not-yet-passing* and *broken automated tests* are the *real* iteration progress indicator 
++ *Passing* vs. *Not-yet-passing* and *broken automated tests* are the *real* iteration progress indicator   
+
 ![](images/test.PNG)
 
 ### Agile Release Train
