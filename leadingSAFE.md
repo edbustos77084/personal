@@ -28,7 +28,7 @@
 ### Embrace Lean-Agile value
 + House of Lean
 + Agile Manifesto
-![](houseLean.png)
+![](images/houseLean.PNG)
 
 ### Implement Lean-Agile mindset
 + test
