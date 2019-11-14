@@ -30,5 +30,13 @@
 + Agile Manifesto
 ![](images/houseLean.PNG)
 
-### Implement Lean-Agile mindset
-+ test
+### SAFe Lean-Agile Principles
+1. Take an economic view
+1. Apply system thinking
+1. Assume variability; preserve options
+1. Build incrementally with fast, integrated learning cycles
+1. Base milestones on objective evaluation of working systems
+1. Visualize and limit WIP, Reduce batch sizes, and manage queue lengths
+1. Apply cadence, synchronize with cross-domain planning
+1. Unlock the intrinsic motivation of knowledge workers
+1. Decentralize decision-making
