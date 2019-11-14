@@ -128,7 +128,7 @@ https://www.scaledagileframework.com/
 
 ### Leadership Foundation
 + _People are already doing their best; the problems are with the system. Only management can change the system._
-    + _W. Edwards Deming_
+     _--W. Edwards Deming_
 
 
 
