@@ -124,7 +124,12 @@ https://www.scaledagileframework.com/
 + Define stream boundaries, people, deliverables, ARTs
 + Capture a Value Stream Canvas   
 
-![](images/Canvas.PNG)
+![](images/Canvas.PNG)   
+
+### Leadership Foundation
++ _People are already doing their best; the problems are with the system. Only management can change the system._
+    + _W. Edwards Deming_
+
 
 
 
