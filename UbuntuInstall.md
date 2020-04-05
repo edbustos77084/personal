@@ -1,3 +1,42 @@
+
+## Set Proxy
++ $ sudo vi /etc/environment
++ $ http_proxy="http://proxy.compaq.com:8080"
++ $ https_proxy="http://proxy.compaq.com:8080"
++ $ no_proxy="localhost,127.0.0.1,::1"
+
+## Proxy in SIOS LAB's LR1:
++ $ sudo vi /etc/environment
++ $ http_proxy="http://proxy.houston.hpecorp.net:8080
+
+## Get the latest updates:
++ $ sudo apt update
++ $ sudo apt upgrade
+
+## Install VIM:
++ $ sudo apt -y install vim
+
+## Enable SSH access: 
++ $ sudo apt-get -y install openssh-server
++ $ sudo systemctl enable ssh
++ $ sudo systemctl start ssh
++ $ sudo systemctl status ssh 
+
+## Enable Firewall to allow SSH:
++ $ sudo ufw allow ssh
++ $ sudo ufw enable
++ $ sudo ufw status 
++ $ sudo ufw disable (will disable the firewall)
+
+## Check for ports in Use:
++ $ sudo lsof -i -P -n | grep LISTEN
++ $ sudo netstat -tulpn | grep LISTEN
++ $ ss
++ $ ss/netstat
+
+## Change Hostname if necessary:
++ $ sudo hostname new-name
+
 # Ubuntu Installation Instructions
 ## How to install KVM w/ Bonding on Ubuntu
 + https://raymii.org/s/tutorials/KVM_with_bonding_and_VLAN_tagging_setup_on_Ubuntu_12.04.html
@@ -15,6 +54,7 @@
 1. sudo apt update
 1. apt list -a docker-ce (will show what versions are out there)should be done first
 1. sudo apt install docker-ce (will install the latest, might not be what you want)
+
 ### To prevent the Docker package from being automatically updated, mark it as held back
 1. sudo apt-mark hold docker-ce
 1. sudo systemctl status docker
@@ -60,12 +100,12 @@
 	+ Now configure your Docker Proxy Settings:
 	    + Run under root, create this file:
 		+ cat > /etc/systemd/system/docker.service.d/http-proxy.conf 
-		+ <<EOF
+		```
 		    + [Service]
 		    + Environment="HTTP_PROXY=http://127.0.0.1:3128"
 		    + Environment="HTTPS_PROXY=http://127.0.0.1:3128"
 		    + Environment="NO_PROXY=localhost,127.0.0.1,172.17.0.1,172.30.1.1"
-		 >>EOF
+		 ```
 	+ Restart Docker
 		+ systemctl daemon-reload
 		+ systemctl restart docker
@@ -108,43 +148,7 @@
 + vm4 - VLAN4 = 192.168.4.10 { no dhcp/dns yet} - (volante/HPinvent123)
 + vm5 - VLAN3 = 192.168.3.202 (dhcp lease) - (volante/HPinvent123)
 
-## Set Proxy
-+ $ sudo vi /etc/environment
-+ $ http_proxy="http://proxy.compaq.com:8080"
-+ $ https_proxy="http://proxy.compaq.com:8080"
-+ $ no_proxy="localhost,127.0.0.1,::1"
 
-## Proxy in SIOS LAB's LR1:
-+ $ sudo vi /etc/environment
-+ $ http_proxy="http://proxy.houston.hpecorp.net:8080
-
-## Get the latest updates:
-+ $ sudo apt update
-+ $ sudo apt upgrade
-
-## Install VIM:
-+ $ sudo apt -y install vim
-
-## Enable SSH access: 
-+ $ sudo apt-get -y install openssh-server
-+ $ sudo systemctl enable ssh
-+ $ sudo systemctl start ssh
-+ $ sudo systemctl status ssh 
-
-## Enable Firewall to allow SSH:
-+ $ sudo ufw allow ssh
-+ $ sudo ufw enable
-+ $ sudo ufw status 
-+ $ sudo ufw disable (will disable the firewall)
-
-## Check for ports in Use:
-+ $ sudo lsof -i -P -n | grep LISTEN
-+ $ sudo netstat -tulpn | grep LISTEN
-+ $ ss
-+ $ ss/netstat
-
-## Change Hostname if necessary:
-+ $ sudo hostname new-name
 
 ## Prepare to install VMs:if
 + Ubuntu 19.04 Server - NO GUI
@@ -297,3 +301,4 @@ Problems were seen when selecting eno5.2 if using a private vlan, you may still 
 		    + sudo ufw status
 			+ sudo ufw allow bind9
 	+ Test your setup doing an nslookup and ping by name
+
