@@ -30,17 +30,15 @@
 + $ sudo ufw disable (will disable the firewall)
 
 ## Check for ports in Use:
-+ $ sudo lsof -i -P -n | grep LISTEN
 + $ sudo netstat -tulpn | grep LISTEN
 + $ ss
-+ $ ss/netstat
 
 ## Change Hostname if necessary:
 + $ sudo hostname new-name
 
 
 ## How to install Docker on Ubuntu 18.04
-+ https://linuxize.com/post/how-to-install-and-use-docker-on-ubuntu-18-04/
++ Reference this link: https://linuxize.com/post/how-to-install-and-use-docker-on-ubuntu-18-04/
 
 1. sudo apt update
 1. sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
@@ -60,8 +58,9 @@
 1. Proceed with the setup instructions on how to configure a VM or Physical system behind a Corporate Proxy Server below
 1. To Remove Docker follow instructions at the link (https://linuxize.com/post/how-to-install-and-use-docker-on-ubuntu-18-04/)
 
-## How to setup a VM behind the Corporate Proxy server to download Docker Images - 
-1. Docker Daemon needs to be configured along with your domain credentials: 
+## How to setup a VM behind the Corporate Proxy server to download Docker Images  
+1. Docker Daemon needs to be configured along with your domain credentials:
+Reference this link to download the cntlm tool. 
  https://medium.com/@saniaky/configure-docker-to-use-a-host-proxy-e88bd988c0aa
  http://sourceforge.net/projects/cntlm/files/cntlm/cntlm%200.92.3/
  https://www.unixmen.com/ubuntu-14-04-behind-domain-proxy-solved/
@@ -72,7 +71,7 @@
    Look under the heading "Configure Docker Daemon to use proxy"
 1. If you get this error: "Error response from daemon: Get https://registry-1.docker.io/v2/: remote error: tls:    access denied"
 1. This example assumes you are using Ubuntu 19.04
-1. First download the deb package "cntlm"
+1. First download the deb package "cntlm" from the link below.
     +  http://sourceforge.net/projects/cntlm/files/cntlm/cntlm%200.92.3/
 	+  Use WinSCP or some other method to get onto your VM in the lab (assume your VM is on an LR0 - 16.x.x.x)
 	+  Copy the deb package to /tmp
@@ -88,7 +87,7 @@
 	+ Save and exit
 	+ Generate password hash
 		+ cntlm -H
-		+ Copy the hash PassNTLMv2 back into the file for the "Password" instead of leaving your domain plain text password
+		+ Copy the hash PassNTLMv2 back into the cntlm.conf file for the "Password" instead of leaving your domain plain text password
 	+ Save and exit
 	+ Export the Local Proxy: 
 	    + export http_proxy=http://127.0.0.1:3128
@@ -111,8 +110,9 @@
 		+ You should see below, if not verify spelling and that you included [Service]
 		+ Environment=HTTP_PROXY=http://127.0.0.1:3128 HTTPS_PROXY=http://127.0.0.1:3128 NO_PROXY=localhost,127.0.0.1
 	+ Configure Docker Client to pass proxy information to containers: (note: back as your normal user). 
-	    + Create /edit ~/.docker/config.json
-		 
+	    + Create the directory ~/.docker and a file called config.json
+		+ Edit ~/.docker/config.json
+		``` 
         {
 		  "proxies":
 		  {
@@ -124,7 +124,7 @@
 		     }
 		  }
 		}
-        
+        ```
 	+ Reboot the system
 	+ docker search ubuntu
 	+ docker image pull ubuntu
