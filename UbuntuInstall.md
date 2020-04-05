@@ -78,16 +78,16 @@ Reference this link to download the cntlm tool.
 	+  As root install the package "dpkg -i cntlm_0.92.3_amd64.deb"
 	+  Edit cntlm.conf with the following
 	+  vim /etc/cntlm.conf
-        +  Username 
-		+  Domain
-		+  Password
-		+  Proxy Server
+        +  Username (your domain username)
+		+  Domain   (americas)
+		+  Password (your password in plain text)
+		+  Proxy Server (proxy.compaq.com:8080)
 		+  Listen 127.0.0.1:3128
 		+  Gateway "yes"
 	+ Save and exit
-	+ Generate password hash
+	+ Generate password hash below:
 		+ cntlm -H
-		+ Copy the hash PassNTLMv2 back into the cntlm.conf file for the "Password" instead of leaving your domain plain text password
+		+ Copy the hash PassNTLMv2 back into the cntlm.conf file for the "Password" instead of leaving your domain americas password in plain text!
 	+ Save and exit
 	+ Export the Local Proxy: 
 	    + export http_proxy=http://127.0.0.1:3128
@@ -137,7 +137,7 @@ Reference this link to download the cntlm tool.
 + https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/
 
 
-## Prepare to install VMs:if
+## Prepare to install VMs
 + Ubuntu 19.04 Server - NO GUI
 + https://vitux.com/how-to-install-kvm-to-create-and-manage-virtual-machines-in-ubuntu/
 + https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/
