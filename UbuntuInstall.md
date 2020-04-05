@@ -1,4 +1,5 @@
 
+# Ubuntu Installation Instructions
 ## Set Proxy
 + $ sudo vi /etc/environment
 + $ http_proxy="http://proxy.compaq.com:8080"
@@ -37,10 +38,6 @@
 ## Change Hostname if necessary:
 + $ sudo hostname new-name
 
-# Ubuntu Installation Instructions
-## How to install KVM w/ Bonding on Ubuntu
-+ https://raymii.org/s/tutorials/KVM_with_bonding_and_VLAN_tagging_setup_on_Ubuntu_12.04.html
-+ https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/
 
 ## How to install Docker on Ubuntu 18.04
 + https://linuxize.com/post/how-to-install-and-use-docker-on-ubuntu-18-04/
@@ -135,19 +132,9 @@
 	+ docker image rm ubuntu
 		
 		
-## Install and Deploy Kubernetes on Ubuntu
-+ https://vitux.com/install-and-deploy-kubernetes-on-ubuntu/
-
-## Ubuntu 19.04 in 4th floor Lab - Sandbox
-+ VLAN2 - LR0 - 16.x.x.x
-+ VLAN3 - Private { 192.168.3.200-254}
-+ VLAN4 - Private { no dhcp/dns yet}
-+ vm1 - VLAN2 = 16.81.51.23 (edward/HPinvent123)
-+ vm2 - VLAN3 = 192.168.3.9 (DHCP/DNS Server) - (edward/HPinvent123)
-+ vm3 - VLAN3 = 192.168.3.201 (dhcp lease)- (volante/HPinvent123)
-+ vm4 - VLAN4 = 192.168.4.10 { no dhcp/dns yet} - (volante/HPinvent123)
-+ vm5 - VLAN3 = 192.168.3.202 (dhcp lease) - (volante/HPinvent123)
-
+## How to install KVM w/ Bonding on Ubuntu
++ https://raymii.org/s/tutorials/KVM_with_bonding_and_VLAN_tagging_setup_on_Ubuntu_12.04.html
++ https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/
 
 
 ## Prepare to install VMs:if
@@ -222,7 +209,7 @@ Problems were seen when selecting eno5.2 if using a private vlan, you may still 
 
 + $sudo vi /etc/netplan/50-cloud-init.yaml
 
-+ network:
+``` network:
     + ethernets:
         + enp1s0:
             + dhcp4: no
@@ -238,7 +225,7 @@ Problems were seen when selecting eno5.2 if using a private vlan, you may still 
 
 + Applying the Network changes: 
 +  $sudo netplan --debug apply
-
+```
 
 ## Configure DHCP server:
 + Download the necessary files before 
@@ -302,3 +289,15 @@ Problems were seen when selecting eno5.2 if using a private vlan, you may still 
 			+ sudo ufw allow bind9
 	+ Test your setup doing an nslookup and ping by name
 
+## Install and Deploy Kubernetes on Ubuntu
++ https://vitux.com/install-and-deploy-kubernetes-on-ubuntu/
+
+## Ubuntu 19.04 in 4th floor Lab - Sandbox
++ VLAN2 - LR0 - 16.x.x.x
++ VLAN3 - Private { 192.168.3.200-254}
++ VLAN4 - Private { no dhcp/dns yet}
++ vm1 - VLAN2 = 16.81.51.23 (edward/HPinvent123)
++ vm2 - VLAN3 = 192.168.3.9 (DHCP/DNS Server) - (edward/HPinvent123)
++ vm3 - VLAN3 = 192.168.3.201 (dhcp lease)- (volante/HPinvent123)
++ vm4 - VLAN4 = 192.168.4.10 { no dhcp/dns yet} - (volante/HPinvent123)
++ vm5 - VLAN3 = 192.168.3.202 (dhcp lease) - (volante/HPinvent123)
