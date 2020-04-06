@@ -1,54 +1,58 @@
 
 # Ubuntu Installation Instructions
 ## Set Proxy
-+ $ sudo vi /etc/environment
-+ $ http_proxy="http://proxy.compaq.com:8080"
-+ $ https_proxy="http://proxy.compaq.com:8080"
-+ $ no_proxy="localhost,127.0.0.1,::1"
++ $ ```sudo vi /etc/environment``` (or)
++ $ ```sudo cat >> /etc/environment << EOF```
+```
+http_proxy="http://web-proxy.houston.hpecorp.net:8080"
+https_proxy="http://web-proxy.houston.hpecorp.net:8080"
+no_proxy="localhost,127.0.0.1,::1,.hpqcorp.net,.hpecorp.net"
+EOF
+```
 
 ## Proxy in SIOS LAB's LR1:
-+ $ sudo vi /etc/environment
-+ $ http_proxy="http://proxy.houston.hpecorp.net:8080
++ $ ```sudo vi /etc/environment```
++ $ ```http_proxy="http://proxy.houston.hpecorp.net:8080```
 
 ## Get the latest updates:
-+ $ sudo apt update
-+ $ sudo apt upgrade
++ $ ```sudo apt update```
++ $ ```sudo apt upgrade```
 
 ## Install VIM:
-+ $ sudo apt -y install vim
++ $ ```sudo apt -y install vim```
 
 ## Enable SSH access: 
-+ $ sudo apt-get -y install openssh-server
-+ $ sudo systemctl enable ssh
-+ $ sudo systemctl start ssh
-+ $ sudo systemctl status ssh 
++ $ ```sudo apt-get -y install openssh-server```
++ $ ```sudo systemctl enable ssh```
++ $ ```sudo systemctl start ssh```
++ $ ```sudo systemctl status ssh``` 
 
 ## Enable Firewall to allow SSH:
-+ $ sudo ufw allow ssh
-+ $ sudo ufw enable
-+ $ sudo ufw status 
-+ $ sudo ufw disable (will disable the firewall)
++ $ ```sudo ufw allow ssh```
++ $ ```sudo ufw enable```
++ $ ```sudo ufw status``` 
++ $ ```sudo ufw disable``` (will disable the firewall)
 
 ## Check for ports in Use:
-+ $ sudo netstat -tulpn | grep LISTEN
-+ $ ss
++ $ ```sudo netstat -tulpn | grep LISTEN```
++ $ ```ss```
 
 ## Change Hostname if necessary:
-+ $ sudo hostname new-name
++ $ ```sudo hostname new-name```
 
 
 ## How to install Docker on Ubuntu 18.04
 + Reference this link: https://linuxize.com/post/how-to-install-and-use-docker-on-ubuntu-18-04/
 
-1. sudo apt update
-1. sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
-1. curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-1. sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
++ ```sudo apt update```
++ ```sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common```
++ ```curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -```
++ ```sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"```
 
 ## Now install Docker CE
-1. sudo apt update
-1. apt list -a docker-ce (will show what versions are out there)should be done first
-1. sudo apt install docker-ce (will install the latest, might not be what you want)
++ ```sudo apt update```
++ ```apt list -a docker-ce``` (will show what versions are out there)should be done first
++ ```sudo apt install docker-ce``` (will install the latest, might not be what you want)
 
 ### To prevent the Docker package from being automatically updated, mark it as held back
 + ```sudo apt-mark hold docker-ce```
