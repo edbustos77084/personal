@@ -51,20 +51,21 @@
 1. sudo apt install docker-ce (will install the latest, might not be what you want)
 
 ### To prevent the Docker package from being automatically updated, mark it as held back
-1. sudo apt-mark hold docker-ce
-1. sudo systemctl status docker
-1. sudo usermod -aG docker $USER
-1. docker container run hello-world (NOTE: This will fail behind our Corporate proxy "docker: Got permission denied while trying to connect to the Docker daemon socket at unix:/ //var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/create: dial unix /var/run/docker.sock: connect: permission denied. ")
++ ```sudo apt-mark hold docker-ce```
++ ```sudo systemctl status docker```
++ ```sudo usermod -aG docker $USER```
++ ```docker container run hello-world```
++ NOTE: If this fails, it may be due to the fact you are behind the corporate proxy server "docker: Got permission denied while trying to connect to the Docker daemon socket at unix:/ //var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/create: dial unix /var/run/docker.sock: connect: permission denied. ")
 1. Proceed with the setup instructions on how to configure a VM or Physical system behind a Corporate Proxy Server below
-1. To Remove Docker follow instructions at the link (https://linuxize.com/post/how-to-install-and-use-docker-on-ubuntu-18-04/)
+1. If you wish to Remove Docker follow instructions at the link (https://linuxize.com/post/how-to-install-and-use-docker-on-ubuntu-18-04/)
 
 ## How to setup a VM behind the Corporate Proxy server to download Docker Images  
-1. Docker Daemon needs to be configured along with your domain credentials:
-Reference this link to download the cntlm tool. 
+1. The Docker Daemon needs to be configured along with your domain credentials: Alternatively you can investigate this method descripted here: https://docs.docker.com/config/daemon/systemd/ 
+1. Reference this link to download the **cntlm** tool. 
  https://medium.com/@saniaky/configure-docker-to-use-a-host-proxy-e88bd988c0aa
  http://sourceforge.net/projects/cntlm/files/cntlm/cntlm%200.92.3/
  https://www.unixmen.com/ubuntu-14-04-behind-domain-proxy-solved/
-1. dpkg -i cntlm_0.92.3_amd64.deb
++ ```dpkg -i cntlm_0.92.3_amd64.deb```
 
 
 ## You have to install the Ubuntu deb package and then follow the instructions on both links. To configure 
@@ -86,13 +87,13 @@ Reference this link to download the cntlm tool.
 		+  Gateway "yes"
 	+ Save and exit
 	+ Generate password hash below:
-		+ cntlm -H
+		+ ```cntlm -H```
 		+ Copy the hash PassNTLMv2 back into the cntlm.conf file for the "Password" instead of leaving your domain americas password in plain text!
 	+ Save and exit
 	+ Export the Local Proxy: 
 	    + export http_proxy=http://127.0.0.1:3128
 	+ Restart cntml daemon to load the new settings
-	    + /etc/init.d/cntlm restart
+	    + ```/etc/init.d/cntlm restart```
 	+ Now configure your Docker Proxy Settings:
 	    + Run under root, create this file:
 		+ cat > /etc/systemd/system/docker.service.d/http-proxy.conf 
