@@ -98,9 +98,9 @@ Reference this link to download the cntlm tool.
 		+ cat > /etc/systemd/system/docker.service.d/http-proxy.conf 
 		```
 		    [Service]
-		    Environment="HTTP_PROXY=http://127.0.0.1:3128"
-		    Environment="HTTPS_PROXY=http://127.0.0.1:3128"
-		    Environment="NO_PROXY=localhost,127.0.0.1,172.17.0.1,172.30.1.1"
+		    Environment="HTTP_PROXY=http://web-proxy.houston.hpecorp.net:8080"
+		    Environment="HTTPS_PROXY=http://web-proxy.houston.hpecorp.net:8080"
+		    Environment="NO_PROXY=localhost,.hpqcorp.net"
 		 ```
 	+ Restart Docker
 		+ systemctl daemon-reload
