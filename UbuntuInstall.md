@@ -44,21 +44,21 @@ EOF
 ## How to install Docker on Ubuntu 18.04
 + Reference this link: https://linuxize.com/post/how-to-install-and-use-docker-on-ubuntu-18-04/
 
-+ ```sudo apt update```
-+ ```sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common```
-+ ```curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -```
-+ ```sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"```
++ $ ```sudo apt update```
++ $ ```sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common```
++ $ ```curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -```
++ $ ```sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"```
 
 ## Now install Docker CE
-+ ```sudo apt update```
-+ ```apt list -a docker-ce``` (will show what versions are out there)should be done first
-+ ```sudo apt install docker-ce``` (will install the latest, might not be what you want)
++ $ ```sudo apt update```
++ $ ```apt list -a docker-ce``` (will show what versions are out there)should be done first
++ $ ```sudo apt install docker-ce``` (will install the latest, might not be what you want)
 
 ### To prevent the Docker package from being automatically updated, mark it as held back
-+ ```sudo apt-mark hold docker-ce```
-+ ```sudo systemctl status docker```
-+ ```sudo usermod -aG docker $USER```
-+ ```docker container run hello-world```
++ $ ```sudo apt-mark hold docker-ce```
++ $ ```sudo systemctl status docker```
++ $ ```sudo usermod -aG docker $USER```
++ $ ```docker container run hello-world```
 + NOTE: If this fails, it may be due to the fact you are behind the corporate proxy server "docker: Got permission denied while trying to connect to the Docker daemon socket at unix:/ //var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/create: dial unix /var/run/docker.sock: connect: permission denied. ")
 1. Proceed with the setup instructions on how to configure a VM or Physical system behind a Corporate Proxy Server below
 1. If you wish to Remove Docker follow instructions at the link (https://linuxize.com/post/how-to-install-and-use-docker-on-ubuntu-18-04/)
@@ -82,7 +82,7 @@ EOF
 	+  Copy the deb package to /tmp
 	+  As root install the package "dpkg -i cntlm_0.92.3_amd64.deb"
 	+  Edit cntlm.conf with the following
-	+  vim /etc/cntlm.conf
+	+  $ ```vim /etc/cntlm.conf```
         +  Username (your domain username)
 		+  Domain   (americas)
 		+  Password (your password in plain text)
@@ -95,12 +95,12 @@ EOF
 		+ Copy the hash PassNTLMv2 back into the cntlm.conf file for the "Password" instead of leaving your domain americas password in plain text!
 	+ Save and exit
 	+ Export the Local Proxy: 
-	    + export http_proxy=http://127.0.0.1:3128
+	    + $ ```export http_proxy=http://127.0.0.1:3128```
 	+ Restart cntml daemon to load the new settings
-	    + ```/etc/init.d/cntlm restart```
+	    + $ ```/etc/init.d/cntlm restart```
 	+ Now configure your Docker Proxy Settings:
 	    + Run under root, create this file:
-		+ cat > /etc/systemd/system/docker.service.d/http-proxy.conf 
+		+ $ ```cat > /etc/systemd/system/docker.service.d/http-proxy.conf``` 
 		```
 		    [Service]
 		    Environment="HTTP_PROXY=http://web-proxy.houston.hpecorp.net:8080"
@@ -108,12 +108,12 @@ EOF
 		    Environment="NO_PROXY=localhost,.hpqcorp.net"
 		 ```
 	+ Restart Docker
-		+ ```systemctl daemon-reload```
-		+ ```systemctl restart docker```
+		+ $ ```systemctl daemon-reload```
+		+ $ ```systemctl restart docker```
 	+ Verify that the configuration has been loaded:
-	    + ```Systemctl show --property=Environment docker```
+	    + $ ```Systemctl show --property=Environment docker```
 		+ Verify your configuration 
-		+ ```Environment=HTTP_PROXY=http://web-proxy.houston.hpecorp.net:8080 HTTPS_PROXY=http://web-proxy.houston.hpecorp.net:8080 NO_PROXY=localhost,127.0.0.1,.hpqcorp.net```
+		+ $ ```Environment=HTTP_PROXY=http://web-proxy.houston.hpecorp.net:8080 HTTPS_PROXY=http://web-proxy.houston.hpecorp.net:8080 NO_PROXY=localhost,127.0.0.1,.hpqcorp.net```
 	+ Configure Docker Client to pass proxy information to containers: (note: back as your normal user). 
 	    + Create the directory ~/.docker and a file called config.json
 		+ Edit ~/.docker/config.json
@@ -131,10 +131,10 @@ EOF
 		}
         ```
 	+ Reboot the system
-	+ docker search ubuntu
-	+ docker image pull ubuntu
-	+ docker image ls
-	+ docker image rm ubuntu
+	+ $ ```docker search ubuntu```
+	+ $ ```docker image pull ubuntu```
+	+ $ ```docker image ls```
+	+ $ ```docker image rm ubuntu```
 		
 		
 ## How to install KVM w/ Bonding on Ubuntu
@@ -147,16 +147,16 @@ EOF
 + https://vitux.com/how-to-install-kvm-to-create-and-manage-virtual-machines-in-ubuntu/
 + https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/
 
-+ $ egrep -c ‘(svm|vmx)’ /proc/cpuinfo
++ $ ```egrep -c ‘(svm|vmx)’ /proc/cpuinfo```
 
 ## sudo apt install cpu-checker
 + sudo kvm-ok
 
-+ $ sudo apt-get install qemu-kvm 
-+ $ sudo apt-get install libvirt-daemon-system
-+ $ sudo apt-get install libvirt-clients
-+ $ sudo apt-get install bridge-utils
-+ $ sudo apt-get install virt-manager
++ $ ```sudo apt-get install qemu-kvm```
++ $ ```sudo apt-get install libvirt-daemon-system```
++ $ ```sudo apt-get install libvirt-clients```
++ $ ```sudo apt-get install bridge-utils```
++ $ ```sudo apt-get install virt-manager```
 
 ### NOTE: installing libvirt-bin gave an error 18.10+ (so instead of libvirt-bin use libvirt-daemon-system libvirt-clients)
 
@@ -165,14 +165,14 @@ EOF
 + The following output of the groups command will indicate that the current root user is already a member of the libvirt group. Therefore there is no need to add yourself to this group.
 
 ## To add other users into the group
-+ $ sudo adduser [username] libvirt
-+ $ sudo virsh -c qemu:///system list
-+ $ sudo service libvirtd status
++ $ ```sudo adduser [username] libvirt```
++ $ ```sudo virsh -c qemu:///system list```
++ $ ```sudo service libvirtd status```
 
 ## Check the VLAN settings:
-+ $ cat /proc/net/vlan/config
++ $ ```cat /proc/net/vlan/config```
 + Install the vlan package which adds some scripts to the ifup/ifdown mimic:
-+ $ apt-get install vlan
++ $ ```apt-get install vlan```
 
 
 ## **Original Network setup: **
@@ -204,17 +204,18 @@ Problems were seen when selecting eno5.2 if using a private vlan, you may still 
 
 ## Download the necessary DHCP and DNS packages before re-configuring to the Private Network:
 + DNS: 
-+ sudo apt install bind9 bind9utils bind9-doc dnsutils -y
++ $ ```sudo apt install bind9 bind9utils bind9-doc dnsutils -y```
 
 + DHCP:
-+ sudo apt install isc-dhcp-server -y
++ $ ```sudo apt install isc-dhcp-server -y```
 
 
 + Sample NIC configuration of the VM on a Private VLAN-3, that is both the DHCP and DNS server: 
 
-+ $sudo vi /etc/netplan/50-cloud-init.yaml
++ $ ```sudo vi /etc/netplan/50-cloud-init.yaml```
 
-``` network:
+``` 
+network:
     + ethernets:
         + enp1s0:
             + dhcp4: no
@@ -234,35 +235,35 @@ Problems were seen when selecting eno5.2 if using a private vlan, you may still 
 
 ## Configure DHCP server:
 + Download the necessary files before 
-+ sudo vim /etc/dhcp/dhcpd.conf
++ $ ```sudo vim /etc/dhcp/dhcpd.conf```
 
 ## How to verify your DHCP lease:
 + netplan ip leases enp1s0  (substitute your adapter identified via ifconfig)
 
 ## How to verify what DHCP leases the server has handed out:
-+ cat /var/lib/dhcp/dhcpd.leases
++ $ ```cat /var/lib/dhcp/dhcpd.leases```
 
 ## Start and Stop DHCP server
-+ sudo service isc-dhcp-server restart
-+ sudo service isc-dhcp-server start
-+ sudo service isc-dhcp-server stop
++ $ ```sudo service isc-dhcp-server restart```
++ $ ```sudo service isc-dhcp-server start```
++ $ ```sudo service isc-dhcp-server stop```
 + From <https://help.ubuntu.com/community/isc-dhcp-server> 
 + Verify if DHCP server is running
-+ sudo service isc-dhcp-server status
++ $ ```sudo service isc-dhcp-server status```
 	
 ## Renew DHCP Address
-+ sudo dhclient -r
++ $ ```sudo dhclient -r```
 
 ## How to view DHCP leases handed out by the DHCP server:
-+ sudo cat /var/lib/dhcp/dhcpd.leases
++ $ ```sudo cat /var/lib/dhcp/dhcpd.leases```
 
 ## Configure DNS settings:
-+ sudo /etc/bind/named.conf.options
++ $ ```sudo /etc/bind/named.conf.options```
 + https://www.hiroom2.com/2019/06/15/ubuntu-1904-bind-en/
 + https://www.youtube.com/watch?v=P1Kf3rDuhJE
 
 ## Configure your server with a Host Name:
-+ sudo hostnamectl set-hostname vm2.volante.dev
++ $ ```sudo hostnamectl set-hostname vm2.volante.dev```
 
 + Modify the /etc/bind/named.config.local (create Forward and Reverse Zones)
     + Specify where the newly created files will reside, they must be in the BIND directory
