@@ -103,12 +103,12 @@ Reference this link to download the cntlm tool.
 		    Environment="NO_PROXY=localhost,.hpqcorp.net"
 		 ```
 	+ Restart Docker
-		+ systemctl daemon-reload
-		+ systemctl restart docker
+		+ ```systemctl daemon-reload```
+		+ ```systemctl restart docker```
 	+ Verify that the configuration has been loaded:
-	    + Systemctl show --property=Environment docker
-		+ You should see below, if not verify spelling and that you included [Service]
-		+ Environment=HTTP_PROXY=http://127.0.0.1:3128 HTTPS_PROXY=http://127.0.0.1:3128 NO_PROXY=localhost,127.0.0.1
+	    + ```Systemctl show --property=Environment docker```
+		+ Verify your configuration 
+		+ ```Environment=HTTP_PROXY=http://web-proxy.houston.hpecorp.net:8080 HTTPS_PROXY=http://web-proxy.houston.hpecorp.net:8080 NO_PROXY=localhost,127.0.0.1,.hpqcorp.net```
 	+ Configure Docker Client to pass proxy information to containers: (note: back as your normal user). 
 	    + Create the directory ~/.docker and a file called config.json
 		+ Edit ~/.docker/config.json
