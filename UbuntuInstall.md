@@ -253,6 +253,7 @@ network:
 	
 ## Renew DHCP Address
 + $ ```sudo dhclient -r```
++ $ ```sudo dhclient```
 
 ## How to view DHCP leases handed out by the DHCP server:
 + $ ```sudo cat /var/lib/dhcp/dhcpd.leases```
