@@ -31,8 +31,9 @@ echo "$(tput setaf 4) $(tput setab 7)Download Vagrant 2.2.9...$(tput sgr 0)"
 sudo wget https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_x86_64.deb
 echo "done..."
 echo ""
-echo "Pause 10 seconds; You may have to change Directory permissions where you want to launch Vagrant"
-echo "If Vagrant does not start '$ sudo chown -R <user> <directory>' "
+echo "$(tput setaf 4) $(tput setab 7)You have to change Directory Permissions if Vagrant does not start...$(tput sgr 0)"
+echo "$(tput setaf 4) $(tput setab 7)run '$ sudo chown -R <user> <directory>...$(tput sgr 0)"
+echo "Pause 10 seconds"
 sudo sleep 10
 echo ""
 
@@ -71,7 +72,7 @@ sudo apt install docker-ce -y
 echo "done.."
 echo ""
 
-echo "$(tput setaf 4) $(tput setab 7)Create a systemd drop-in directory for doocker service...$(tput sgr 0)"
+echo "$(tput setaf 4) $(tput setab 7)Create a systemd drop-in directory for docker service...$(tput sgr 0)"
 sudo mkdir -p /etc/systemd/system/docker.service.d
 echo "done..."
 echo ""
@@ -80,7 +81,9 @@ echo "$(tput setaf 4) $(tput setab 7)Create a file called http-proxy.conf....$(t
 sudo touch /etc/systemd/system/docker.service.d/http-proxy.conf
 sudo cat >>/etc/systemd/system/docker.service.d/http-proxy.conf<<EOF
 [Service]
-Environment="HTTP_PROXY=http://web-proxy.houston.hpecorp.net:8080" "NO_PROXY=localhost,127.0.0.1,hpecorp.net"
+Environment="HTTP_PROXY=http://web-proxy.houston.hpecorp.net:8080"
+Environment="HTTPS_PROXY=http://web-proxy.houston.hpecorp.net:8080"
+Environment="NO_PROXY=localhost,.hpecorp.net"
 EOF
 echo "done.."
 echo ""
@@ -89,7 +92,7 @@ echo "$(tput setaf 4) $(tput setab 7)Create a file called https-proxy.conf...$(t
 sudo touch /etc/systemd/system/docker.service.d/https-proxy.conf
 sudo cat >>/etc/systemd/system/docker.service.d/https-proxy.conf<<EOF
 [Service]
-Environment="HTTPS_PROXY=http://web-proxy.houston.hpecorp.net:8080" "NO_PROXY=localhost,127.0.0.1,hpecorp.net"
+Environment="HTTPS_PROXY=http://web-proxy.houston.hpecorp.net:8080" 
 EOF
 echo "done.."
 echo ""

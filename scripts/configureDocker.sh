@@ -9,7 +9,9 @@ echo "$(tput setaf 4) $(tput setab 7)Create a file called http-proxy.conf....$(t
 sudo touch /etc/systemd/system/docker.service.d/http-proxy.conf
 sudo cat >>/etc/systemd/system/docker.service.d/http-proxy.conf<<EOF
 [Service]
-Environment="HTTP_PROXY=http://web-proxy.houston.hpecorp.net:8080" "NO_PROXY=localhost,127.0.0.1,hpecorp.net"
+Environment="HTTP_PROXY=http://web-proxy.houston.hpecorp.net:8080"
+Environment="HTTPS_PROXY=http://web-proxy.houston.hpecorp.net:8080"
+Environment="NO_PROXY=localhost,.hpecorp.net"
 EOF
 echo "done.."
 echo ""
@@ -18,7 +20,7 @@ echo "$(tput setaf 4) $(tput setab 7)Create a file called https-proxy.conf...$(t
 sudo touch /etc/systemd/system/docker.service.d/https-proxy.conf
 sudo cat >>/etc/systemd/system/docker.service.d/https-proxy.conf<<EOF
 [Service]
-Environment="HTTPS_PROXY=http://web-proxy.houston.hpecorp.net:8080" "NO_PROXY=localhost,127.0.0.1,hpecorp.net"
+Environment="HTTPS_PROXY=http://web-proxy.houston.hpecorp.net:8080" 
 EOF
 echo "done.."
 echo ""
