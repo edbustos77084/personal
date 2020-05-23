@@ -107,18 +107,18 @@ EOF
 	 
 ## Now configure your Docker Proxy Settings - VERY IMPORTANT:
 + $ ```sudo cat >> /etc/systemd/system/docker.service.d/http-proxy.conf<<EOF``` 
-		```
-		    [Service]
-		    Environment="HTTP_PROXY=http://web-proxy.houston.hpecorp.net:8080"
-		    Environment="HTTPS_PROXY=http://web-proxy.houston.hpecorp.net:8080"
-		    Environment="NO_PROXY=localhost,.hpecorp.net,.hpqcorp.net"
-			EOF
+	+	```
+	+	    [Service]
+	+	    Environment="HTTP_PROXY=http://web-proxy.houston.hpecorp.net:8080"
+	+	    Environment="HTTPS_PROXY=http://web-proxy.houston.hpecorp.net:8080"
+	+	    Environment="NO_PROXY=localhost,.hpecorp.net,.hpqcorp.net"
+	+		EOF
 		 ```
 + Restart Docker
-  + $ ```systemctl daemon-reload```
-  + $ ```systemctl restart docker```
+  + $ ```sudo systemctl daemon-reload```
+  + $ ```sudo systemctl restart docker```
 + Verify that the configuration has been loaded:
-  + $ ```Systemctl show --property=Environment docker```
+  + $ ```sudo systemctl show --property=Environment docker```
   + Verify your configuration 
   + $ ```Environment=HTTP_PROXY=http://web-proxy.houston.hpecorp.net:8080 HTTPS_PROXY=http://web-proxy.houston.hpecorp.net:8080 NO_PROXY=localhost,127.0.0.1,.hpqcorp.net```
 + Configure Docker Client to pass proxy information to containers: (note: back as your normal user). 
