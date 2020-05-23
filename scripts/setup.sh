@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Version 3 of the script for Ubuntu 18.0.4.4
+# Fixed the Docker Proxy settings
+
 echo "$(tput setaf 4) $(tput setab 7)Setup Proxy...$(tput sgr 0)"
 sudo cat>>/etc/environment<<EOF 
 http_proxy="http://web-proxy.houston.hpecorp.net:8080"
