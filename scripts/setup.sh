@@ -19,7 +19,6 @@ echo "$(tput setaf 4) $(tput setab 7)Enable SSH Access...$(tput sgr 0)"
 sudo apt-get -y install openssh-server
 sudo systemctl enable ssh
 sudo systemctl start ssh
-sudo systemctl status ssh
 echo "done.."
 echo ""
 
@@ -89,7 +88,7 @@ echo "$(tput setaf 4) $(tput setab 7)Create a file called https-proxy.conf...$(t
 sudo touch /etc/systemd/system/docker.service.d/https-proxy.conf
 sudo cat >>/etc/systemd/system/docker.service.d/https-proxy.conf<<EOF
 [Service]
-Environment="HTTPS_PROXY=https://web-proxy.houston.hpecorp.net:8080" "NO_PROXY=localhost,127.0.0.1,hpecorp.net"
+Environment="HTTPS_PROXY=http://web-proxy.houston.hpecorp.net:8080" "NO_PROXY=localhost,127.0.0.1,hpecorp.net"
 EOF
 echo "done.."
 echo ""
@@ -116,5 +115,5 @@ echo "$(tput setaf 4) $(tput setab 7)Add your user to the docker group...$(tput 
 sudo usermod -aG docker $USER
 echo "done.."
 echo ""
-echo "$(tput setaf 4) $(tput setab 7)YOU HAVE TO MANUALLY LOGOUT and LOG BACK IN......$(tput sgr 0)"
+echo "$(tput setaf 4) $(tput setab 7)YOU HAVE TO MANUALLY REBOOT and LOG BACK IN......$(tput sgr 0)"
 echo ""
