@@ -78,7 +78,7 @@ EOF
 + ```dpkg -i cntlm_0.92.3_amd64.deb```
 
 
-## You have to install the Ubuntu deb package and then follow the instructions on both links. To configure 
+## You have to install the Ubuntu deb package and then follow the instructions on both links. To configure (The CNTLM.CONF does not seem to be required!)
    Look under the heading "Configure Docker Daemon to use proxy"
 1. If you get this error: "Error response from daemon: Get https://registry-1.docker.io/v2/: remote error: tls:    access denied"
 1. This example assumes you are using Ubuntu 19.04
@@ -104,14 +104,15 @@ EOF
 	    + $ ```export http_proxy=http://127.0.0.1:3128```
 	+ Restart cntml daemon to load the new settings
 	    + $ ```/etc/init.d/cntlm restart```
-	+ Now configure your Docker Proxy Settings:
-	    + Run under root, create this file:
-		+ $ ```cat > /etc/systemd/system/docker.service.d/http-proxy.conf``` 
+	 
+## Now configure your Docker Proxy Settings - VERY IMPORTANT:
+	+ $ ```sudo cat >> /etc/systemd/system/docker.service.d/http-proxy.conf<<EOF``` 
 		```
 		    [Service]
 		    Environment="HTTP_PROXY=http://web-proxy.houston.hpecorp.net:8080"
 		    Environment="HTTPS_PROXY=http://web-proxy.houston.hpecorp.net:8080"
-		    Environment="NO_PROXY=localhost,.hpqcorp.net"
+		    Environment="NO_PROXY=localhost,.hpecorp.net,.hpqcorp.net"
+			EOF
 		 ```
 	+ Restart Docker
 		+ $ ```systemctl daemon-reload```
