@@ -66,10 +66,10 @@ EOF
 ## How to setup a VM behind the Corporate Proxy server to download Docker Images  
 1. The Docker Daemon needs to be configured along with your domain credentials: Alternatively you can investigate this method descripted here: https://docs.docker.com/config/daemon/systemd/ 
 1. The method above works! But you also have to Create the docker group, if it doesn't exist
-```$sudo groupadd docker```
-```$sudo usermod -aG docker $USER (this should be your username)```
-```$logout of the system```
-```$docker run hello-world```
++ ```$sudo groupadd docker```
++ ```$sudo usermod -aG docker $USER (this should be your username)```
++ ```$logout of the system```
++ ```$docker run hello-world```
 
 1. Reference this link to download the **cntlm** tool. 
  https://medium.com/@saniaky/configure-docker-to-use-a-host-proxy-e88bd988c0aa
