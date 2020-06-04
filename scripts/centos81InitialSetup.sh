@@ -76,6 +76,6 @@ cd drivers-linux-eth/
 sudo ./build.sh 
 echo "pause 5 seconds"
 sudo sleep 5
-sudo insmod eth/ionic/ionic.ko 
+sudo insmod drivers/eth/ionic/ionic.ko 
 echo "done.."
 
