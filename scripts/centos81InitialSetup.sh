@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
 
 # Using this script on the LR1 which requires different proxy settings that LR0
-# Be sure to the script creates the /bin directory ie. /home/volante/bin to copy the tar driver package
+
 
 VAR_PROXY="http://proxy.compaq.com:8080"
-VAR_DRIVER="drivers-linux-eth.tar.xz"
-VAR_NGINX1="http://16.85.2.24/drivers-linux-eth.tar.xz"
-
-sudo mkdir bin
-
+VAR_PEN_DRIVER="drivers-linux-eth.tar.xz"
+VAR_NGINXdriver="http://15.115.118.72:8081/drivers-linux-eth.tar.xz"
 
 echo "$(tput setaf 4) $(tput setab 7)Setup Proxy...$(tput sgr 0)"
 sudo cat>>/etc/environment<<EOF 
@@ -66,15 +63,16 @@ sudo yum -y install lshw
 echo "done.."
 
 
-#echo "$(tput setaf 4) $(tput setab 7)Get the Pensando driver...$(tput sgr 0)"
-#sudo wget http://${nginx1}
+echo "$(tput setaf 4) $(tput setab 7)Get the Pensando driver...$(tput sgr 0)"
+sudo wget http://${VAR_NGINXdriver}
 
-#echo "$(tput setaf 4) $(tput setab 7)Install the Pensando driver...$(tput sgr 0)"
-#sudo tar xvf ${VAR_DRIVER}
-#
-#cd /home/volante/bin/drivers-linux-eth
-#./build.sh 
-#insmod eth/ionic/ionic.ko 
-
-#echo "done.."
+echo "$(tput setaf 4) $(tput setab 7)Install the Pensando driver...$(tput sgr 0)"
+sudo xz -d ${VAR_PEN_DRIVER}
+sudo tar xvf ${VAR_PEN_DRIVER}
+sudo cd drivers-linux/
+sudo ./build.sh 
+echo "pause 5 seconds"
+sudo sleep 5
+sudo insmod eth/ionic/ionic.ko 
+echo "done.."
 
