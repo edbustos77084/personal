@@ -64,7 +64,7 @@ echo "done.."
 
 
 echo "$(tput setaf 4) $(tput setab 7)Get the Pensando driver...$(tput sgr 0)"
-sudo wget http://${VAR_NGINXdriver}
+sudo wget ${VAR_NGINXdriver}
 
 echo "$(tput setaf 4) $(tput setab 7)Install the Pensando driver...$(tput sgr 0)"
 sudo xz -d ${VAR_PEN_DRIVER}
