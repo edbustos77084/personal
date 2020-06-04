@@ -79,3 +79,7 @@ sudo sleep 5
 sudo insmod drivers/eth/ionic/ionic.ko 
 echo "done.."
 
+echo "$(tput setaf 4) $(tput setab 7)Check to see if driver loaded...$(tput sgr 0)"
+lsmod | grep ionic
+
+echo "done..."
