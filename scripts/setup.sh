@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 
-# Version 3 of the script for Ubuntu 18.0.4.4
+# Script for Ubuntu 18.0.4.4 LTS
 # Fixed the Docker Proxy settings
+# LR1 Proxy requires the http://proxy.compaq.com:8080
+# LR0 Proxy can use http://web-proxy.houston.hpecorp.net:8080
+
+VAR_PROXY="http://proxy.compaq.com:8080"
+VAR_DRIVER="drivers-linux-eth.tar.xz"
+VAR_NGINX1="http://16.85.2.24/drivers-linux-eth.tar.xz"
 
 echo "$(tput setaf 4) $(tput setab 7)Setup Proxy...$(tput sgr 0)"
 sudo cat>>/etc/environment<<EOF 
-http_proxy="http://web-proxy.houston.hpecorp.net:8080"
-https_proxy="http://web-proxy.houston.hpecorp.net:8080"
+http_proxy="${VAR_PROXY}"
+https_proxy="${VAR_PROXY}"
 no_proxy="localhost,127.0.0.1,::1,.hpqcorp.net,hpecorp.net"
 EOF
 echo "done..."
@@ -84,8 +90,7 @@ echo "$(tput setaf 4) $(tput setab 7)Create a file called http-proxy.conf....$(t
 sudo touch /etc/systemd/system/docker.service.d/http-proxy.conf
 sudo cat >>/etc/systemd/system/docker.service.d/http-proxy.conf<<EOF
 [Service]
-Environment="HTTP_PROXY=http://web-proxy.houston.hpecorp.net:8080"
-Environment="HTTPS_PROXY=http://web-proxy.houston.hpecorp.net:8080"
+Environment="HTTP_PROXY=${VAR_PROXY}"
 Environment="NO_PROXY=localhost,.hpecorp.net"
 EOF
 echo "done.."
@@ -95,7 +100,7 @@ echo "$(tput setaf 4) $(tput setab 7)Create a file called https-proxy.conf...$(t
 sudo touch /etc/systemd/system/docker.service.d/https-proxy.conf
 sudo cat >>/etc/systemd/system/docker.service.d/https-proxy.conf<<EOF
 [Service]
-Environment="HTTPS_PROXY=http://web-proxy.houston.hpecorp.net:8080" 
+Environment="HTTPS_PROXY=${VAR_PROXY}" 
 EOF
 echo "done.."
 echo ""
