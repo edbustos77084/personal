@@ -66,10 +66,13 @@ echo "done.."
 echo "$(tput setaf 4) $(tput setab 7)Get the Pensando driver...$(tput sgr 0)"
 sudo wget ${VAR_NGINXdriver}
 
-echo "$(tput setaf 4) $(tput setab 7)Install the Pensando driver...$(tput sgr 0)"
+echo "$(tput setaf 4) $(tput setab 7)Extract the Pensando driver...$(tput sgr 0)"
 sudo xz -d ${VAR_PEN_DRIVER}
-sudo tar xvf ${VAR_PEN_DRIVER}
-sudo cd drivers-linux/
+sudo tar xvf drivers-linux.tar
+
+
+echo "$(tput setaf 4) $(tput setab 7)Install the Pensando driver...$(tput sgr 0)"
+cd drivers-linux/
 sudo ./build.sh 
 echo "pause 5 seconds"
 sudo sleep 5
