@@ -106,11 +106,11 @@ sudo insmod drivers/eth/ionic/ionic.ko
 
 echolog "$(tput setaf 4) $(tput setab 7)Test for Driver settings...$(tput sgr 0)"
 fileIonic=/etc/sysconfig/modules/ionic.modules
-if [ -f fileIonic ]; then
+if [ -f "$fileIonic" ]; then
 	echo "$fileIonic exists"
 else
 echolog "Ooops appears the file is missing, let's write it"
-sudo cat>>/etc/sysconfig/modules/ionic.modules<<EOF 
+sudo cat>/etc/sysconfig/modules/ionic.modules<<EOF 
 insmod ~/drivers-linux-eth/drivers/eth/ionic/ionic.ko
 EOF
 fi
