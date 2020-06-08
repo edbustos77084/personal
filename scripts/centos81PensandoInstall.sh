@@ -4,6 +4,8 @@ set -o pipefail
 
 # Using this script on the LR1 which requires different proxy settings that LR0
 # NOTE: Assume you are running this from your home directory or cd ~...for the driver to load. 
+# NOTE: This won't work without a reboot in the middle of the process to load the kernel-headers for the Driver build
+
 
 NOW=$(date +"%T-%D")
 VAR_PROXY="http://proxy.compaq.com:8080"
@@ -51,8 +53,13 @@ echo "done.."
 
 
 echolog "$(tput setaf 4) $(tput setab 7)Check for Updates...$(tput sgr 0)"
-sudo yum check-update || exit 1
+ 
+if sudo yum check-update ; then 
+  echo "There are updates available"
+  exit 0
+fi
 echo "done.."
+
 echolog "$(tput setaf 4) $(tput setab 7)Install Kernel Devel Package...$(tput sgr 0)"
 sudo yum -y install kernel-devel || exit 1
 echo "done.."
