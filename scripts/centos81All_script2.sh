@@ -49,28 +49,6 @@ EOF
 fi
 echo "done.."
 
-echolog "$(tput setaf 4) $(tput setab 7)Check for Updates...$(tput sgr 0)"
-sudo yum check-update || exit 1
-echo "done.."
-echolog "$(tput setaf 4) $(tput setab 7)Install Kernel Devel Package...$(tput sgr 0)"
-sudo yum -y install kernel-devel || exit 1
-echo "done.."
-echolog "$(tput setaf 4) $(tput setab 7)Install Kernel Headers...$(tput sgr 0)"
-sudo yum -y install kernel-headers || exit 1
-echo "done.."
-echolog "$(tput setaf 4) $(tput setab 7)Update Kernel...$(tput sgr 0)"
-sudo yum -y install kernel || exit 1 
-echo "done.."
-echolog "$(tput setaf 4) $(tput setab 7)Build-Essentials...$(tput sgr 0)"
-sudo yum -y install gcc gcc-c++ kernel-devel make || exit 1
-echo "done.."
-echolog "$(tput setaf 4) $(tput setab 7)Development Tools...$(tput sgr 0)"
-sudo yum -y groupinstall "Development Tools" || exit 1
-echo "done.."
-echolog "$(tput setaf 4) $(tput setab 7)Done upgrading the kernel-headers...$(tput sgr 0)"
-echolog "$(tput setaf 4) $(tput setab 7)Reboot the system to load the kernel-headers...$(tput sgr 0)"
-
-
 
 echolog "$(tput setaf 4) $(tput setab 7)Download Vagrant...$(tput sgr 0)"
 sudo wget https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_x86_64.rpm
