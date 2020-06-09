@@ -140,7 +140,8 @@ if [ -f "$fileIonic" ]; then
 else
 echolog "Ooops appears the file is missing, let's write it"
 sudo cat>/etc/sysconfig/modules/ionic.modules<<EOF 
-insmod ~/drivers-linux-eth/drivers/eth/ionic/ionic.ko
+#!/bin/sh
+insmod /root/drivers-linux-eth/drivers/eth/ionic/ionic.ko
 EOF
 fi
 
