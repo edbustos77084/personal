@@ -62,33 +62,39 @@ echolog "$(tput setaf 4) $(tput setab 7)Extract the Pensando Driver...$(tput sgr
 if [ -f drivers-linux-eth.tar ]; then
 echo "Driver is already downloaded"
 else
+echo "Creating the directory where to put the driver"
+sudo mkdir -p /lib/modules/`uname -r`/extra
+
+echo "Copying the file to the correct location"
+cp ${VAR_PEN_DRIVER}/lib/modules/`uname -r`/extra
+cd /lib/modules/`uname -r`/extra
 sudo xz -d ${VAR_PEN_DRIVER}
 sudo tar xvf drivers-linux-eth.tar
 fi
 
 echolog "$(tput setaf 4) $(tput setab 7)Install the Pensando driver...$(tput sgr 0)"
-cd drivers-linux-eth/
+cd /lib/modules/`uname -r`/drivers-linux-eth/
 sudo ./build.sh 
 echo "pause 5 seconds"
 sudo sleep 5
-sudo insmod drivers/eth/ionic/ionic.ko 
+sudo modprobe ionic 
 
 
-echolog "$(tput setaf 4) $(tput setab 7)Test for Driver settings...$(tput sgr 0)"
-fileIonic=/etc/sysconfig/modules/ionic.modules
-if [ -f "$fileIonic" ]; then
-	echo "$fileIonic exists"
-else
-echolog "Ooops appears the file is missing, let's write it"
-sudo cat>/etc/sysconfig/modules/ionic.modules<<EOF 
+#echolog "$(tput setaf 4) $(tput setab 7)Test for Driver settings...$(tput sgr 0)"
+#fileIonic=/etc/sysconfig/modules/ionic.modules
+#if [ -f "$fileIonic" ]; then
+#	echo "$fileIonic exists"
+#else
+#echolog "Ooops appears the file is missing, let's write it"
+#sudo cat>/etc/sysconfig/modules/ionic.modules<<EOF 
 #!/bin/sh
-insmod ~/drivers-linux-eth/drivers/eth/ionic/ionic.ko
-EOF
-fi
+#insmod ~/drivers-linux-eth/drivers/eth/ionic/ionic.ko
+#EOF
+#fi
 
-sudo chmod 755 /etc/sysconfig/modules/ionic.modules
+#sudo chmod 755 /etc/sysconfig/modules/ionic.modules
 
-echolog "Changed ionic permissions.."
+#echolog "Changed ionic permissions.."
 
 
 echolog "$(tput setaf 4) $(tput setab 7)DONE...................................................$(tput sgr 0)"
