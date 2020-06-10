@@ -74,7 +74,7 @@ echo "Creating the directory where to put the driver"
 sudo mkdir -p /lib/modules/`uname -r`/extra
 
 echo "Copying the file to the correct location"
-cp -R ~/drivers-linux-eth/drivers/eth/ionic/ /lib/modules/`uname -r`/extra
+cp -R ~/drivers-linux-eth/drivers/eth/ionic/* /lib/modules/`uname -r`/extra
 
 
 echo "Pause 3 seconds"
