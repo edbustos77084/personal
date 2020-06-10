@@ -62,22 +62,24 @@ echolog "$(tput setaf 4) $(tput setab 7)Extract the Pensando Driver...$(tput sgr
 if [ -f drivers-linux-eth.tar ]; then
 echo "Driver is already downloaded"
 else
-echo "Creating the directory where to put the driver"
-sudo mkdir -p /lib/modules/`uname -r`/extra
-
-echo "Copying the file to the correct location"
-cp ${VAR_PEN_DRIVER}/lib/modules/`uname -r`/extra
-cd /lib/modules/`uname -r`/extra
 sudo xz -d ${VAR_PEN_DRIVER}
 sudo tar xvf drivers-linux-eth.tar
 fi
 
-echolog "$(tput setaf 4) $(tput setab 7)Install the Pensando driver...$(tput sgr 0)"
-cd /lib/modules/`uname -r`/drivers-linux-eth/
-sudo ./build.sh 
-echo "pause 5 seconds"
-sudo sleep 5
-sudo modprobe ionic 
+echo "$(tput setaf 4) $(tput setab 7)Install the Pensando driver...$(tput sgr 0)"
+cd ~/drivers-linux-eth/
+sudo ./build.sh
+
+echo "Creating the directory where to put the driver"
+sudo mkdir -p /lib/modules/`uname -r`/extra
+
+echo "Copying the file to the correct location"
+cp -R ~/drivers-linux-eth/drivers/eth/ionic/ /lib/modules/`uname -r`/extra
+
+
+echo "Pause 3 seconds"
+sudo sleep 3
+modprobe ionic 
 
 
 #echolog "$(tput setaf 4) $(tput setab 7)Test for Driver settings...$(tput sgr 0)"
