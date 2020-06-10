@@ -325,5 +325,5 @@ network:
 + ```volante@adevxp018-ubuntu:/var/www$ sudo docker run --name mynginx7 -v /var/www/:/usr/share/nginx/html:ro -p 8081:80 -d nginx```
 
 + You can't open a browser and see the files, but if you "wget http://IP-address:8081/filename.txt" it works!
-+ Just put the files you want transferred in the /var/www/ directory. Next time I'll try a different directory location. 
++ Just put the files you want transferred in the /var/www/ directory. Next time I'll try a different directory location.
 
