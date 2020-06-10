@@ -82,23 +82,6 @@ sudo sleep 3
 modprobe ionic 
 
 
-#echolog "$(tput setaf 4) $(tput setab 7)Test for Driver settings...$(tput sgr 0)"
-#fileIonic=/etc/sysconfig/modules/ionic.modules
-#if [ -f "$fileIonic" ]; then
-#	echo "$fileIonic exists"
-#else
-#echolog "Ooops appears the file is missing, let's write it"
-#sudo cat>/etc/sysconfig/modules/ionic.modules<<EOF 
-#!/bin/sh
-#insmod ~/drivers-linux-eth/drivers/eth/ionic/ionic.ko
-#EOF
-#fi
-
-#sudo chmod 755 /etc/sysconfig/modules/ionic.modules
-
-#echolog "Changed ionic permissions.."
-
-
 echolog "$(tput setaf 4) $(tput setab 7)DONE...................................................$(tput sgr 0)"
 echolog "$(tput setaf 4) $(tput setab 7)DONE...Confirm Pensando driver is loaded...............$(tput sgr 0)"
 echolog "$(tput setaf 4) $(tput setab 7)DONE...Confirm Pensando loads after a system reboot....$(tput sgr 0)"
