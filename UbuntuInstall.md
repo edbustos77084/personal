@@ -317,3 +317,13 @@ network:
 + vm3 - VLAN3 = 192.168.3.201 (dhcp lease)- (volante/HPinvent123)
 + vm4 - VLAN4 = 192.168.4.10 { no dhcp/dns yet} - (volante/HPinvent123)
 + vm5 - VLAN3 = 192.168.3.202 (dhcp lease) - (volante/HPinvent123)
+
+## Install Nginx
++ https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04
++ I used Docker to setup the quick Nginx file share. https://hub.docker.com/_/nginx
+
++ ```volante@adevxp018-ubuntu:/var/www$ sudo docker run --name mynginx7 -v /var/www/:/usr/share/nginx/html:ro -p 8081:80 -d nginx```
+
++ You can't open a browser and see the files, but if you "wget http://IP-address:8081/filename.txt" it works!
++ Just put the files you want transferred in the /var/www/ directory. Next time I'll try a different directory location. 
+
