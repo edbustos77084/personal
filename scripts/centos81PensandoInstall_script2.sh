@@ -75,7 +75,7 @@ sudo mkdir -p /lib/modules/`uname -r`/extra
 
 echo "Copying the file to the correct location"
 cp -R ~/drivers-linux-eth/drivers/eth/ionic/* /lib/modules/`uname -r`/extra
-
+depmod -a
 
 echo "Pause 3 seconds"
 sudo sleep 3
