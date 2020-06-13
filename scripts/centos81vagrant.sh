@@ -7,7 +7,7 @@ set -o pipefail
 
 NOW=$(date +"%T-%D")
 VAR_PROXY="http://proxy.compaq.com:8080"
-VAR_PEN_DRIVER="drivers-linux-eth.tar.xz"
+#VAR_PEN_DRIVER="drivers-linux-eth.tar.xz"
 VAR_NGINX="15.115.118.72:8081/"
 log_file="log_Vagrant.log"
 
@@ -48,6 +48,13 @@ EOF
 fi
 echolog "done.."
 
+echolog "$(tput setaf 4) $(tput setab 7)Enable Oracle's VirtualBox Repo...$(tput sgr 0)"
+sudo dnf config-manager --add-repo=https://download.virtualbox.org/virtualbox/rpm/el/virtualbox.repo
+echolog "done.."
+
+echolog "$(tput setaf 4) $(tput setab 7)Install VirtualBox-6.1...$(tput sgr 0)"
+sudo yum install VirtualBox-6.1
+echolog "done.."
 
 echolog "$(tput setaf 4) $(tput setab 7)Download Vagrant...$(tput sgr 0)"
 sudo wget https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_x86_64.rpm
