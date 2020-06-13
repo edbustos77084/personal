@@ -9,8 +9,8 @@ NOW=$(date +"%T-%D")
 VAR_PROXY="http://proxy.compaq.com:8080"
 VAR_PEN_DRIVER="drivers-linux-eth.tar.xz"
 VAR_NGINX="15.115.118.72:8081/"
+log_file="log_InstallPensandoDriver.log"
 
-log_file="log_file2.log"
 echolog()
 (
  echo "$@"
@@ -24,7 +24,7 @@ echolog "$(tput setaf 4) $(tput setab 7)Test for Proxy settings...$(tput sgr 0)"
 fileEnv=/etc/environment
 if grep -q proxy $fileEnv;
 then
-echo "Proxy appears to be available"
+echolog "Proxy appears to be available"
 else
 echolog "Ooops appears to be missing, let's write it"
 sudo cat>>/etc/environment<<EOF 
@@ -33,30 +33,30 @@ https_proxy="${VAR_PROXY}"
 no_proxy="localhost,127.0.0.1,::1,.hpqcorp.net,hpecorp.net"
 EOF
 fi
-echo "done..."
+echolog "done..."
 
 
 echolog "$(tput setaf 4) $(tput setab 7)Test for YUM settings..$(tput sgr 0)"
 fileYum=/etc/yum.conf
 if grep -q proxy $fileYum
 then
-echo "Proxy appears to be available"
+echolog "Proxy appears to be available"
 else
 echolog "Ooops appears to be missing, let's write it"
 sudo cat>>/etc/yum.conf<<EOF
 proxy="${VAR_PROXY}"
 EOF
 fi
-echo "done.."
+echolog "done.."
 
 
 if [ -f drivers-linux-eth.tar.xz ]; then
-echo "Driver is already downloaded"
+echolog "Driver is already downloaded"
 else
 echolog "$(tput setaf 4) $(tput setab 7)Get the Pensando Driver Package...$(tput sgr 0)"
 sudo wget http://${VAR_NGINX}${VAR_PEN_DRIVER} 
 fi
-
+echolog "done.."
 
 echolog "$(tput setaf 4) $(tput setab 7)Extract the Pensando Driver...$(tput sgr 0)"
 if [ -f drivers-linux-eth.tar ]; then
@@ -65,21 +65,26 @@ else
 sudo xz -d ${VAR_PEN_DRIVER}
 sudo tar xvf drivers-linux-eth.tar
 fi
+echolog "done.."
 
-echo "$(tput setaf 4) $(tput setab 7)Install the Pensando driver...$(tput sgr 0)"
+echolog "$(tput setaf 4) $(tput setab 7)Install the Pensando driver...$(tput sgr 0)"
 cd ~/drivers-linux-eth/
 sudo ./build.sh
+echolog "done.."
 
-echo "Creating the directory where to put the driver"
+echolog "Creating the directory where to put the driver"
 sudo mkdir -p /lib/modules/`uname -r`/extra
+echolog "done.."
 
-echo "Copying the file to the correct location"
+echolog "Copying the file to the correct location"
 cp -R ~/drivers-linux-eth/drivers/eth/ionic/* /lib/modules/`uname -r`/extra
 depmod -a
+echolog "done.."
 
-echo "Pause 3 seconds"
+echolog "Pause for 3 seconds to modprobe ionic"
 sudo sleep 3
 modprobe ionic 
+echolog "done.."
 
 
 echolog "$(tput setaf 4) $(tput setab 7)DONE...................................................$(tput sgr 0)"
