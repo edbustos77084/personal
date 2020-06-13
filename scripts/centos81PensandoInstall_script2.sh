@@ -2,8 +2,11 @@
 set -e
 set -o pipefail
 
-# Using this script on the LR1 which requires different proxy settings that LR0
-# NOTE: Assume you are running this from your home directory or cd ~...for the driver to load. 
+# Edward Bustos 
+# SHELL Script to bootstrap CentOS 8.1 and install the Pensando Driver
+# Assume you are running this as Root from your home directory or cd ~
+# Depending on whether you are on the LR1 or LR0 you may have to adjust the PROXY SERVER
+# Confirm the Docker Container (NGINZ) is running if you can't download the DRIVER  
 
 NOW=$(date +"%T-%D")
 VAR_PROXY="http://proxy.compaq.com:8080"

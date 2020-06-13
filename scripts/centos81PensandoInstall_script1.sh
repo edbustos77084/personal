@@ -2,8 +2,20 @@
 set -e
 set -o pipefail
 
-# Using this script on the LR1 which requires different proxy settings that LR0
-# NOTE: Assume you are running this from your home directory or cd ~...for the driver to load. 
+# Edward Bustos 
+# SHELL Script to bootstrap CentOS 8.1 (build 1911) after a base OS install.
+# The script(s) will install all prerequisites and automatically load the Pensando Driver, even after an OS reboot. 
+# Assume you are running this as Root from your home directory or cd ~
+# Depending on whether you are on the LR1 or LR0 you may have to adjust the PROXY SERVER
+# Confirm the Docker Container (NGINZ) is running if you can't download the DRIVER 
+
+# Instructions: 
+# 1. Install a base OS from Blofly: http://blofly.us.rdlabs.hpecorp.net/community/CentOS/8.1/CentOS-8.1.1911-x86_64-dvd1.iso
+# 2. As Root run "centos81PensandoInstall_script1.sh" 
+# 3. Be sure to reboot the system, so that the kernel headers can load before running the second script.
+# 4. As Root run "centos81PensandoInstall_script2.sh"
+# 5. Verify the Pensando driver is loaded >$ lsmod | grep ionic 
+
 
 NOW=$(date +"%T-%D")
 VAR_PROXY="http://proxy.compaq.com:8080"
