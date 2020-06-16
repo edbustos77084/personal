@@ -63,7 +63,6 @@ echolog "done.."
 # Vagrant may require changes to Directory Permissions in Ubuntu '$ sudo chown -R <user> <directory>, if it doesn't start
 echolog "$(tput setaf 4) $(tput setab 7)Install Vagrant...$(tput sgr 0)"
 sudo rpm -ivh vagrant_2.2.9_x86_64.rpm
-#sudo chown -R volante ~
 echolog "done.."
 
 echolog "$(tput setaf 4) $(tput setab 7)Install Pluggins...$(tput sgr 0)"
