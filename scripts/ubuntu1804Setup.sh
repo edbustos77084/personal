@@ -42,8 +42,8 @@ echo "done..."
 echo ""
 echo "$(tput setaf 4) $(tput setab 7)You have to change Directory Permissions if Vagrant does not start...$(tput sgr 0)"
 echo "$(tput setaf 4) $(tput setab 7)run '$ sudo chown -R <user> <directory>...$(tput sgr 0)"
-echo "Pause 10 seconds"
-sudo sleep 10
+echo "Pause 5 seconds"
+sudo sleep 5
 echo ""
 
 echo "$(tput setaf 4) $(tput setab 7)Install Vagrant...$(tput sgr 0)"
