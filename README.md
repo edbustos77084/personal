@@ -4,3 +4,6 @@
 - [ ] Learn Go Programming
 - [ ] Develop Test tools
 - [ ] Learn DevOPs
+- [ ] Learn Docker
+- [ ] Learn Ansible
+- [ ] Improve Linux 
