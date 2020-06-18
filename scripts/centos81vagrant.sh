@@ -71,4 +71,4 @@ echolog "done.."
 
 
 
-echolog "$(tput setaf 4) $(tput setab 7)DONE...Confirm Vagrant and VirtualBox are installed...$(tput sgr 0)"
+echolog "$(tput setaf 4) $(tput setab 7)DONE...confirm Vagrant and VirtualBox are installed...$(tput sgr 0)"
