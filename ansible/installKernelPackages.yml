@@ -1,0 +1,22 @@
+---
+# ansible-playbook yum.yml
+
+- name: run tasks on all hosts
+  hosts: centos
+  become: true
+  become_user: root
+  tasks:
+    
+    - name: install kernel packages
+      yum:
+        name: 
+         - kernel-devel
+         - kernel-headers
+         - kernel
+         - gcc
+         - gcc-c++
+         - make  
+        state: present
+        update_cache: true
+      become: true
+

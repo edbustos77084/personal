@@ -1,0 +1,56 @@
+---
+# ansible-playbook file.yml
+
+- name: run tasks on all hosts
+  hosts: "*"
+  tasks:
+          - debug: var=ansible_host
+
+          - name: ensure a directory exists
+            file:
+                    path: $HOME/test_singleDirectory
+                    state: directory
+
+          - name: create multiple directories in a loop
+            file:
+                    path: "$HOME/{{ item }}"
+                    state: directory
+            loop:
+                    - test_directoryLoop1
+                    - test_directoryLoop2
+                    - test_directoryLoop3
+
+          - name: remove directory
+            file: 
+                   path: $HOME/test_singleDirectory
+                   state: absent
+
+          - name: change directory permissions
+            file: 
+                   path: "/home/{{ ansible_user }}/test_singleDirectory"
+                   state: directory
+                   owner: root
+                   group: root
+                   mode: 0755
+            become: true
+
+          - name: ensure file exists 
+            file:
+                     path: $HOME/test_file
+                     state: touch
+#          - name: remove a file 
+#            file:
+#                     path: $HOME/test_file
+#                     state: absent
+
+
+          - name: create symlink to test_file 
+            file:
+                     src: $HOME/test_file
+                     dest: $HOME/test_file_link
+                     state: link
+
+          - name: remove symlink 
+            file:
+                     path: $HOME/test_file_link
+                     state: absent

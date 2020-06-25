@@ -1,0 +1,43 @@
+---
+# ansible-playbook yum.yml
+
+- name: run tasks on all hosts
+  hosts: centos
+  tasks:
+    - name: install epel repo
+      yum:
+        name: epel-release
+        state: present
+        update_cache: true
+      become: true
+
+    - name: install kernel packages
+      yum:
+        name: 
+         - htop
+         - kernel-devel
+         - kernel-headers
+         - kernel
+         - gcc
+         - gcc-c++
+         - make  
+        state: present
+        update_cache: true
+      become: true
+    - name: install requirements for Driver update
+      yum:
+        name: 
+         - elfutils-libelf-devel
+         - libtool
+         - automake
+         - autoconf
+         - cmake
+         - libnl3-devel
+         - libudev-devel
+         - pkgconfig
+         - valgrind-devel
+         - pciutils
+         - lshw
+        state: present
+        update_cache: true
+      become: true

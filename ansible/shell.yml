@@ -1,0 +1,17 @@
+---
+
+# ansible-playbook shell.yml
+
+- name: run tasks on all hosts
+  hosts: "*"
+  tasks:
+   - name: use args, enviornment and loop with shell
+     shell: echo "Hello, World!" > $TARGET
+     args:
+       chdir: /tmp
+     environment:
+       TARGET: "{{ item }}"
+     loop:
+       - test_file1
+       - test_file2
+

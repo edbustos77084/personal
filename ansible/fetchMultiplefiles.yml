@@ -1,0 +1,25 @@
+---
+# ansible-playbook file.yml
+
+- name: run tasks on all hosts
+  hosts: "*"
+  tasks:
+          - debug: var=ansible_host
+
+          - name: ensure file2 exists 
+            copy:
+                
+               dest: "/home/{{ ansible_user }}/{{ item }}"
+               content: "{{ ansible_host }}"
+            loop:
+                    - test_file1
+                    - test_file2
+          
+          - name: fetch test_file2 
+            fetch:
+                src: "/home/{{ ansible_user }}/{{ item }}"
+                dest: "fetched/{{ inventory_hostname }}/"
+                flat: true
+            loop:
+                    - test_file1
+                    - test_file2

@@ -1,0 +1,21 @@
+---
+# ansible-playbook yum.yml
+
+- name: run tasks on all hosts
+  hosts: centos
+  become: true
+  become_user: root
+  tasks:
+    - name: Reboot the server and wait for it to come back up
+      reboot:
+        connect_timeout: 5
+        msg: "Reboot initiated by Ansible"
+        reboot_timeout: 600
+        pre_reboot_delay: 0
+        post_reboot_delay: 30
+        search_paths: ["/sbin","/usr/sbin","usr/local/sbin"] 
+        test_command: "whoami"
+
+
+
+

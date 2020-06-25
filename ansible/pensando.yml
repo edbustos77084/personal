@@ -1,0 +1,113 @@
+---
+# ansible-playbook yum.yml
+
+- name: run tasks on all hosts
+  hosts: centos
+  #  become: true
+  #become_user: root
+  tasks:
+    - name: let's copy our proxy script to remote hosts
+      copy: src=/etc/ansible/scripts/centos81test4Proxy.sh dest=/$HOME mode=0777
+      become: true
+
+    - name: execute the Proxy script
+      command: sh /$HOME/centos81test4Proxy.sh
+      become: true
+
+    - name: install epel repo
+      yum:
+        name: epel-release
+        state: present
+        update_cache: true
+      become: true
+   
+    - name: let's copy our kernel-devel script to remote hosts
+      copy: src=/etc/ansible/scripts/centos81kdevel.sh dest=/$HOME mode=0777
+      become: true
+      
+    - name: install the kernel-devel for CentOS8.1
+      command: sh /$HOME/centos81kdevel.sh
+      become: true
+
+    - name: install kernel-headers packages
+      yum:
+        name: 
+        # Have to temporarily disable until Pensando driver supports CentOS 8.2
+        #- kernel-devel
+         - kernel-headers
+        state: present
+        update_cache: true
+      become: true
+     
+# Have to temporarily disable kernel updates until Pensando can support CentOS 8.2 kernel     
+#    - name: install kernel 
+#      yum:
+#        name: 
+#         - kernel
+#        state: present
+#        update_cache: true
+#      become: true
+         
+    - name: install gcc         
+      yum:
+        name:
+         - gcc-c++
+         - make
+        state: present
+        update_cache: true  
+      become: true
+   
+    - name: install requirements for Pensando Driver update
+      yum:
+        name: 
+         - elfutils-libelf-devel
+         - libtool
+         - automake
+         - autoconf
+         - cmake
+         - libnl3-devel
+         - libudev-devel
+         - make
+         - pkgconfig
+         - valgrind-devel
+         - pciutils
+        state: present
+        update_cache: true
+      become: true
+
+
+    - name: install lshw for Pensando Driver update
+      yum:
+        name: 
+         - lshw
+        state: present
+        update_cache: true
+      become: true
+
+    - name: Reboot the server and wait for it to come back up.
+      reboot:
+        connect_timeout: 5
+        msg: "Reboot initiated by Ansible"
+        reboot_timeout: 600
+        pre_reboot_delay: 0
+        post_reboot_delay: 30
+        search_paths: ["/sbin","/usr/sbin","usr/local/sbin"] 
+        test_command: "whoami"
+      become: true
+
+    - name: install htop
+      yum:
+        name:
+         - htop
+        state: present
+        update_cache: true
+      become: true
+
+    - name: let's copy our Pensando script to remote hosts
+      copy: src=/etc/ansible/scripts/centos81PensandoInstall_script2.sh dest=/$HOME mode=0777
+      become: true
+     
+    - name: Execute the Pensando script
+      command: sh /$HOME/centos81PensandoInstall_script2.sh
+      become: true
+
